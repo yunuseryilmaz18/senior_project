@@ -20,4 +20,4 @@ To compile programs for the processor:
 cd sw
 make
 `````
-Change `Makefile` for advanced options.
+Change `Makefile` for advanced compiling options.
