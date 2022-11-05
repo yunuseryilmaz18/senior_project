@@ -1,0 +1,4 @@
+Vivado Simulator 2018.1
+Time resolution is 1 ps
+Initializing SRAM from /home/yunus/cust_test/vmem_files/asconInline.vmem
+Warning : input CLKIN1 period and attribute CLKIN1_PERIOD on PLLE2_ADV instance tb_top.dut.clkgen.pll are not same.

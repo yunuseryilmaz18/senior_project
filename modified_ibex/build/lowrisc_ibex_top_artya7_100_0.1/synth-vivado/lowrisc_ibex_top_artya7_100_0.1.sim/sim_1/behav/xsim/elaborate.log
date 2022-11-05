@@ -1,0 +1,20 @@
+Vivado Simulator 2018.1
+Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2018.1/bin/unwrapped/lnx64.o/xelab -wto 82f1a434e53647aaa561e9e84aec0879 --incr --debug typical --relax --mt 8 -L xilinx_vip -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+WARNING: [XSIM 43-4127] File "/home/yunus/senior_project/modified_ibex/build/lowrisc_ibex_top_artya7_100_0.1/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_fetch_fifo.sv" Line 224 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/yunus/senior_project/modified_ibex/build/lowrisc_ibex_top_artya7_100_0.1/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_fetch_fifo.sv" Line 229 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/yunus/senior_project/modified_ibex/build/lowrisc_ibex_top_artya7_100_0.1/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" Line 260 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/yunus/senior_project/modified_ibex/build/lowrisc_ibex_top_artya7_100_0.1/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" Line 265 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/yunus/senior_project/modified_ibex/build/lowrisc_ibex_top_artya7_100_0.1/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" Line 270 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/yunus/senior_project/modified_ibex/build/lowrisc_ibex_top_artya7_100_0.1/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" Line 275 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/yunus/senior_project/modified_ibex/build/lowrisc_ibex_top_artya7_100_0.1/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 638 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/yunus/senior_project/modified_ibex/build/lowrisc_ibex_top_artya7_100_0.1/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 649 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/yunus/senior_project/modified_ibex/build/lowrisc_ibex_top_artya7_100_0.1/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 655 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/yunus/senior_project/modified_ibex/build/lowrisc_ibex_top_artya7_100_0.1/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 487 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/yunus/senior_project/modified_ibex/build/lowrisc_ibex_top_artya7_100_0.1/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 493 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/yunus/senior_project/modified_ibex/build/lowrisc_ibex_top_artya7_100_0.1/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 498 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/yunus/senior_project/modified_ibex/build/lowrisc_ibex_top_artya7_100_0.1/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 503 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

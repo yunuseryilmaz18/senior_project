@@ -1,0 +1,103 @@
+files:
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_fpga_xilinx_shared_0/rtl/fpga/xilinx/prim_clock_gating.sv
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_fpga_xilinx_shared_0/rtl/fpga/xilinx/clkgen_xil7series.sv
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_fpga_xilinx_shared_0/rtl/ram_1p.sv
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_pkg.sv
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_alu.sv
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_compressed_decoder.sv
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_controller.sv
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_decoder.sv
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_ex_block.sv
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_fetch_fifo.sv
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_multdiv_fast.sv
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_multdiv_slow.sv
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_prefetch_buffer.sv
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_pmp.sv
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_register_file_ff.sv
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv
+- file_type: systemVerilogSource
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_top_artya7_100_0.1/rtl/top_artya7_100.sv
+- file_type: xdc
+  is_include_file: false
+  logical_name: ''
+  name: ../src/lowrisc_ibex_top_artya7_100_0.1/data/pins_artya7.xdc
+hooks: {}
+name: lowrisc_ibex_top_artya7_100_0.1
+parameters:
+  SRAM_INIT_FILE:
+    datatype: str
+    default: ../../../../../examples/sw/led/led.vmem
+    description: SRAM initialization file in vmem hex format
+    paramtype: vlogdefine
+tool_options:
+  vivado:
+    part: xc7a100tcsg324-1
+toplevel: top_artya7_100
+version: 0.2.0
+vpi: []

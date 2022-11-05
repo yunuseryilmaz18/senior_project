@@ -1,0 +1,1241 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Tue Mar 10 22:49:36 2020
+# Process ID: 3722
+# Current directory: /home/topalc/Desktop/projeler/temiz_ibex/unmodified
+# Command line: vivado
+# Log file: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/vivado.log
+# Journal file: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.1/data/ip'.
+open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:09 . Memory (MB): peak = 6141.883 ; gain = 105.246 ; free physical = 1915 ; free virtual = 8366
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.1
+  **** Build date : Apr  4 2018-18:56:09
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A6EF40A
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Digilent/210292A6EF40A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Common 17-39] 'open_hw_target' failed due to earlier errors.
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+close_hw
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4331] Invalid usage of property - Setting value property on PARAM_VALUE.ALL_PROBE_SAME_MU is not allowed in procedure update_gui_for_PARAM_VALUE.C_ADV_TRIGGER
+create_ip -name ila -vendor xilinx.com -library ip -version 6.2 -module_name ila_0
+set_property -dict [list CONFIG.C_PROBE2_WIDTH {32} CONFIG.C_PROBE1_WIDTH {32} CONFIG.C_PROBE0_WIDTH {32} CONFIG.C_NUM_OF_PROBES {3} CONFIG.C_EN_STRG_QUAL {1} CONFIG.C_ADV_TRIGGER {true} CONFIG.C_PROBE2_MU_CNT {2} CONFIG.C_PROBE1_MU_CNT {2} CONFIG.C_PROBE0_MU_CNT {2} CONFIG.ALL_PROBE_SAME_MU_CNT {2}] [get_ips ila_0]
+generate_target {instantiation_template} [get_files /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.srcs/sources_1/ip/ila_0/ila_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_0'...
+update_compile_order -fileset sources_1
+generate_target all [get_files  /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.srcs/sources_1/ip/ila_0/ila_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_0'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_0'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ila_0'...
+catch { config_ip_cache -export [get_ips -all ila_0] }
+export_ip_user_files -of_objects [get_files /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.srcs/sources_1/ip/ila_0/ila_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.srcs/sources_1/ip/ila_0/ila_0.xci]
+launch_runs -jobs 4 ila_0_synth_1
+[Tue Mar 10 23:03:04 2020] Launched ila_0_synth_1...
+Run output will be captured here: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/ila_0_synth_1/runme.log
+export_simulation -of_objects [get_files /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.srcs/sources_1/ip/ila_0/ila_0.xci] -directory /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.ip_user_files/sim_scripts -ip_user_files_dir /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.ip_user_files -ipstatic_source_dir /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.cache/compile_simlib/modelsim} {questa=/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.cache/compile_simlib/questa} {ies=/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.cache/compile_simlib/ies} {xcelium=/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.cache/compile_simlib/xcelium} {vcs=/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.cache/compile_simlib/vcs} {riviera=/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/src/lowrisc_ibex_top_artya7_100_0.1/rtl/top_artya7_100.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv:]
+set_property verilog_define SRAM_INIT_FILE=/home/topalc/Desktop/projeler/temiz_ibex/unmodified/examples/sw/led/led.mem [current_fileset]
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue Mar 10 23:24:57 2020] Launched synth_1...
+Run output will be captured here: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/synth_1/runme.log
+[Tue Mar 10 23:24:57 2020] Launched impl_1...
+Run output will be captured here: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.1
+  **** Build date : Apr  4 2018-18:56:09
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A6EF40A
+set_property PROGRAM.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue Mar 10 23:40:18 2020] Launched impl_1...
+Run output will be captured here: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_1/runme.log
+close_hw
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.1
+  **** Build date : Apr  4 2018-18:56:09
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A6EF40A
+set_property PROGRAM.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_1/top_artya7_100.ltx} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_1/top_artya7_100.ltx} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_1/top_artya7_100.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property CONTROL.TRIGGER_MODE ADVANCED_ONLY [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+set_property CONTROL.TSM_FILE /home/topalc/Desktop/projeler/temiz_ibex/test.tsm [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+INFO: [Labtools 27-2015] Compiling ILA trigger state machine from file '/home/topalc/Desktop/projeler/temiz_ibex/test.tsm'
+INFO: [Labtools 27-2075] Trigger state machine - 1 of 16 states used
+    State #0  : wait_for_leds_to_be_C
+INFO: [Labtools 27-2039] /home/topalc/Desktop/projeler/temiz_ibex/test.tsm compilation complete: 0 errors, 0 warnings
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2020-Mar-10 23:50:41
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2020-Mar-10 23:50:43
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+save_wave_config {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wcfg}
+close_hw
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+create_run glob_array_synth -flow {Vivado Synthesis 2018} -strategy {Vivado Synthesis Defaults} -report_strategy {Vivado Synthesis Default Reports}
+Run is defaulting to srcset: sources_1
+Run is defaulting to constrset: constrs_1
+Run is defaulting to part: xc7a100tcsg324-1
+current_run [get_runs glob_array_synth]
+set_property verilog_define SRAM_INIT_FILE=/home/topalc/Desktop/senior_project/senior_project/sw/led/led.mem [current_fileset]
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+[Tue Mar 10 23:53:59 2020] Launched glob_array_synth...
+Run output will be captured here: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/glob_array_synth/runme.log
+[Tue Mar 10 23:53:59 2020] Launched impl_2...
+Run output will be captured here: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.1
+  **** Build date : Apr  4 2018-18:56:09
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A6EF40A
+set_property PROGRAM.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_1/top_artya7_100.bit} [get_hw_devices xc7a100t_0]
+set_property PROBES.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_1/top_artya7_100.ltx} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_1/top_artya7_100.ltx} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+WARNING: [Labtools 27-3413] Dropping logic core with cellname:'ila' at location 'uuid_901A5F558B2950A88131F43987F6BE78' from probes file, since it cannot be found on the programmed device.
+set_property PROBES.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/top_artya7_100.ltx} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/top_artya7_100.ltx} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/top_artya7_100.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2020-Mar-11 00:05:16
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2020-Mar-11 00:05:16
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2020-Mar-11 00:05:19
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2020-Mar-11 00:05:19
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2020-Mar-11 00:05:20
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2020-Mar-11 00:05:20
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2020-Mar-11 00:05:22
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2020-Mar-11 00:05:22
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+INFO: [Labtools 27-2015] Compiling ILA trigger state machine from file '/home/topalc/Desktop/projeler/temiz_ibex/test.tsm'
+INFO: [Labtools 27-2075] Trigger state machine - 1 of 16 states used
+    State #0  : wait_for_leds_to_be_C
+INFO: [Labtools 27-2039] /home/topalc/Desktop/projeler/temiz_ibex/test.tsm compilation complete: 0 errors, 0 warnings
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2020-Mar-11 00:05:34
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+INFO: [Labtools 27-1965] The ILA core 'hw_ila_1' trigger was stopped by user at 2020-Mar-11 00:07:06
+WARNING: [Labtools 27-157] hw_ila [hw_ila_1] stopped. No data to upload.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2020-Mar-11 00:07:10
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2020-Mar-11 00:07:10
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2020-Mar-11 00:07:11
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2020-Mar-11 00:07:11
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2020-Mar-11 00:07:13
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2020-Mar-11 00:07:13
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2020-Mar-11 00:07:16
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2020-Mar-11 00:07:16
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2020-Mar-11 00:07:17
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2020-Mar-11 00:07:17
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+reset_run glob_array_synth
+launch_runs glob_array_synth -jobs 4
+[Wed Mar 11 00:13:31 2020] Launched glob_array_synth...
+Run output will be captured here: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/glob_array_synth/runme.log
+save_wave_config {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wcfg}
+close_hw
+launch_runs impl_2 -jobs 4
+[Wed Mar 11 00:18:35 2020] Launched impl_2...
+Run output will be captured here: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/runme.log
+reset_run impl_2
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+[Wed Mar 11 00:19:06 2020] Launched impl_2...
+Run output will be captured here: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/runme.log
+reset_run impl_2
+WARNING: [Vivado 12-1017] Problems encountered:
+1. PID not specified
+
+reset_run glob_array_synth
+launch_runs glob_array_synth -jobs 4
+[Wed Mar 11 00:19:24 2020] Launched glob_array_synth...
+Run output will be captured here: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/glob_array_synth/runme.log
+launch_runs impl_2 -jobs 4
+[Wed Mar 11 00:24:43 2020] Launched impl_2...
+Run output will be captured here: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/runme.log
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+[Wed Mar 11 00:30:41 2020] Launched impl_2...
+Run output will be captured here: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.1
+  **** Build date : Apr  4 2018-18:56:09
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A6EF40A
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Digilent/210292A6EF40A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Common 17-39] 'open_hw_target' failed due to earlier errors.
+set_property PROBES.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/top_artya7_100.ltx} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/top_artya7_100.ltx} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/top_artya7_100.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {clk_sys_counter} }
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+INFO: [Labtools 27-2015] Compiling ILA trigger state machine from file '/home/topalc/Desktop/projeler/temiz_ibex/test.tsm'
+INFO: [Labtools 27-2075] Trigger state machine - 1 of 16 states used
+    State #0  : wait_for_leds_to_be_C
+INFO: [Labtools 27-2039] /home/topalc/Desktop/projeler/temiz_ibex/test.tsm compilation complete: 0 errors, 0 warnings
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2020-Mar-11 00:33:39
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+INFO: [Labtools 27-1965] The ILA core 'hw_ila_1' trigger was stopped by user at 2020-Mar-11 00:33:56
+WARNING: [Labtools 27-157] hw_ila [hw_ila_1] stopped. No data to upload.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2020-Mar-11 00:33:56
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2020-Mar-11 00:33:56
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2020-Mar-11 00:33:59
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2020-Mar-11 00:33:59
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2020-Mar-11 00:34:03
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2020-Mar-11 00:34:03
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+reset_run glob_array_synth
+launch_runs impl_2 -to_step write_bitstream -jobs 4
+[Wed Mar 11 00:39:41 2020] Launched glob_array_synth...
+Run output will be captured here: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/glob_array_synth/runme.log
+[Wed Mar 11 00:39:41 2020] Launched impl_2...
+Run output will be captured here: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/runme.log
+save_wave_config {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wcfg}
+close_hw
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.1
+  **** Build date : Apr  4 2018-18:56:09
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A6EF40A
+set_property PROGRAM.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/top_artya7_100.bit} [get_hw_devices xc7a100t_0]
+set_property PROBES.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/top_artya7_100.ltx} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/top_artya7_100.ltx} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/top_artya7_100.ltx} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/top_artya7_100.ltx} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/top_artya7_100.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+INFO: [Labtools 27-2015] Compiling ILA trigger state machine from file '/home/topalc/Desktop/projeler/temiz_ibex/test.tsm'
+INFO: [Labtools 27-2075] Trigger state machine - 1 of 16 states used
+    State #0  : wait_for_leds_to_be_C
+INFO: [Labtools 27-2039] /home/topalc/Desktop/projeler/temiz_ibex/test.tsm compilation complete: 0 errors, 0 warnings
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2020-Mar-11 00:50:36
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2020-Mar-11 00:50:44
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+INFO: [Labtools 27-2015] Compiling ILA trigger state machine from file '/home/topalc/Desktop/projeler/temiz_ibex/test.tsm'
+INFO: [Labtools 27-2075] Trigger state machine - 1 of 16 states used
+    State #0  : wait_for_leds_to_be_C
+INFO: [Labtools 27-2039] /home/topalc/Desktop/projeler/temiz_ibex/test.tsm compilation complete: 0 errors, 0 warnings
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2020-Mar-11 00:50:48
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2020-Mar-11 00:50:48
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+save_wave_config {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wcfg}
+close_hw
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/src/lowrisc_ibex_top_artya7_100_0.1/rtl/top_artya7_100.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/src/lowrisc_ibex_fpga_xilinx_shared_0/rtl/ram_1p.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv:]
+create_run ntru_vanilya -flow {Vivado Synthesis 2018} -strategy {Vivado Synthesis Defaults} -report_strategy {Vivado Synthesis Default Reports}
+Run is defaulting to srcset: sources_1
+Run is defaulting to constrset: constrs_1
+Run is defaulting to part: xc7a100tcsg324-1
+current_run [get_runs ntru_vanilya]
+set_property verilog_define SRAM_INIT_FILE=/home/topalc/Desktop/senior_project/senior_project/sw/ntru_latif_hoca/optimized/no_custom/NTRU_48_bitM.mem [current_fileset]
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+launch_runs impl_3 -to_step write_bitstream -jobs 4
+[Wed Mar 11 00:53:55 2020] Launched ntru_vanilya...
+Run output will be captured here: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/ntru_vanilya/runme.log
+[Wed Mar 11 00:53:55 2020] Launched impl_3...
+Run output will be captured here: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_3/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.1
+  **** Build date : Apr  4 2018-18:56:09
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A6EF40A
+set_property PROGRAM.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/top_artya7_100.bit} [get_hw_devices xc7a100t_0]
+set_property PROBES.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/top_artya7_100.ltx} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_2/top_artya7_100.ltx} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+WARNING: [Labtools 27-3413] Dropping logic core with cellname:'ila' at location 'uuid_901A5F558B2950A88131F43987F6BE78' from probes file, since it cannot be found on the programmed device.
+set_property PROBES.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_3/top_artya7_100.ltx} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_3/top_artya7_100.ltx} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/impl_3/top_artya7_100.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+INFO: [Labtools 27-2015] Compiling ILA trigger state machine from file '/home/topalc/Desktop/projeler/temiz_ibex/test.tsm'
+INFO: [Labtools 27-2075] Trigger state machine - 1 of 16 states used
+    State #0  : wait_for_leds_to_be_C
+INFO: [Labtools 27-2039] /home/topalc/Desktop/projeler/temiz_ibex/test.tsm compilation complete: 0 errors, 0 warnings
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2020-Mar-11 01:06:35
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2020-Mar-11 01:06:47
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+save_wave_config {/home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wcfg}
+close_hw
+close_project
+****** Webtalk v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.hw/webtalk/labtool_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Mar 11 04:01:06 2020...
+close_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 7209.273 ; gain = 0.000 ; free physical = 1008 ; free virtual = 7045
+open_project /home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.1/data/ip'.
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+open_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 7209.273 ; gain = 0.000 ; free physical = 960 ; free virtual = 7019
+update_compile_order -fileset sources_1
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/tb_top.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/ram_1p.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/top_artya7_100.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/tb_top.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/ram_1p.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/top_artya7_100.sv:]
+create_run func_test -parent_run synth_1 -flow {Vivado Implementation 2018} -strategy {Vivado Implementation Defaults} -report_strategy {Vivado Implementation Default Reports}
+Run is defaulting to parent run srcset: sources_1
+Run is defaulting to parent run constrset: constrs_1
+Run is defaulting to parent run part: xc7a100tcsg324-1
+current_run [get_runs func_test]
+set_property verilog_define SRAM_INIT_FILE=/home/topalc/Desktop/senior_project/senior_project/sw/arrayler_ve_memory/array_instr_test/array.mem [current_fileset]
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+update_ip_catalog
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+update_ip_catalog
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim/cust.mem'
+INFO: [SIM-utils-43] Exported '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim/cust.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L xil_defaultlib -prj tb_top_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/clkgen_xil7series.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clkgen_xil7series
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/conversion_to_7display.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Binary_To_7Segment
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/custom_module.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module custom_module
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_alu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_alu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_compressed_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_compressed_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_controller.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_controller
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_core
+WARNING: [VRFC 10-1315] redeclaration of ansi port custom_en_ex is not allowed [/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv:142]
+WARNING: [VRFC 10-1315] redeclaration of ansi port custom_valid_ex is not allowed [/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv:143]
+WARNING: [VRFC 10-1315] redeclaration of ansi port custom_data_ex is not allowed [/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv:144]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ram_addr_out_ex is not allowed [/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv:149]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_cs_registers
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_ex_block.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_ex_block
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_fetch_fifo.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_fetch_fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_id_stage
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_if_stage
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_load_store_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_multdiv_fast.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_multdiv_fast
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_multdiv_slow.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_multdiv_slow
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_pmp.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_pmp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_prefetch_buffer.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_prefetch_buffer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_register_file_ff.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_register_file
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/prim_clock_gating.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module prim_clock_gating
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/ram_1p.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram_1p
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/rem_instr.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rem_instr
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/top_artya7_100.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_artya7_100
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.1
+Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2018.1/bin/unwrapped/lnx64.o/xelab -wto da0d3a6f43854fd5becee3c0b6cd0267 --incr --debug typical --relax --mt 8 -L xilinx_vip -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_fetch_fifo.sv" Line 223 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" Line 260 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" Line 265 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 652 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 663 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 669 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 489 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 495 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 500 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 505 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 510 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/top_artya7_100.sv" Line 5. Module top_artya7_100_default has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv" Line 13. Module ibex_core(DmHaltAddr=32'b0,DmExceptionAddr=32'b0) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/prim_clock_gating.sv" Line 5. Module prim_clock_gating has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/2018.1/nightly/2018_04_04_2188600/data/verilog/src/unisims/BUFGCE.v" Line 26. Module BUFGCE_default has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" Line 12. Module ibex_if_stage(DmHaltAddr=32'b0,DmExceptionAddr=32'b0) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_prefetch_buffer.sv" Line 12. Module ibex_prefetch_buffer has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_fetch_fifo.sv" Line 12. Module ibex_fetch_fifo(NUM_REQS=32'b010) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_compressed_decoder.sv" Line 12. Module ibex_compressed_decoder has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 16. Module ibex_id_stage(RV32E=1'b0,RV32M=1'b1) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_register_file_ff.sv" Line 13. Module ibex_register_file(RV32E=1'b0) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_decoder.sv" Line 14. Module ibex_decoder(RV32E=1'b0,RV32M=1'b1) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_controller.sv" Line 9. Module ibex_controller_1 has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_ex_block.sv" Line 11. Module ibex_ex_block(RV32M=1'b1) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/custom_module.sv" Line 27. Module custom_module has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/rem_instr.sv" Line 33. Module rem_instr has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/rem_instr.sv" Line 33. Module rem_instr has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/rem_instr.sv" Line 33. Module rem_instr has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_alu.sv" Line 9. Module ibex_alu has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_alu.sv" Line 9. Module ibex_alu has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_alu.sv" Line 9. Module ibex_alu has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_multdiv_fast.sv" Line 14. Module ibex_multdiv_fast has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 12. Module ibex_load_store_unit has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv" Line 12. Module ibex_cs_registers(MHPMCounterNum=32'b0,MHPMCounterWidth=32'b0101000,PMPEnable=1'b0,PMPGranularity=32'b0,PMPNumRegions=32'b0100,RV32E=1'b0,RV32M=1'b1) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/ram_1p.sv" Line 9. Module ram_1p(Depth=16384) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/2018.1/nightly/2018_04_04_2188600/data/verilog/src/unisims/IBUF.v" Line 29. Module IBUF has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/2018.1/nightly/2018_04_04_2188600/data/verilog/src/unisims/PLLE2_ADV.v" Line 49. Module PLLE2_ADV(CLKFBOUT_MULT=12,CLKIN1_PERIOD=10.0,CLKOUT0_DIVIDE=24) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/2018.1/nightly/2018_04_04_2188600/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/2018.1/nightly/2018_04_04_2188600/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_pkg.sv" Line 9. Module ibex_pkg has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.BUFGCE_default
+Compiling module xil_defaultlib.prim_clock_gating
+Compiling module xil_defaultlib.ibex_fetch_fifo(NUM_REQS=32'b010...
+Compiling module xil_defaultlib.ibex_prefetch_buffer
+Compiling module xil_defaultlib.ibex_compressed_decoder
+Compiling module xil_defaultlib.ibex_if_stage(DmHaltAddr=32'b0,D...
+Compiling module xil_defaultlib.ibex_register_file(RV32E=1'b0)
+Compiling module xil_defaultlib.ibex_decoder(RV32E=1'b0,RV32M=1'...
+Compiling module xil_defaultlib.ibex_controller_1
+Compiling module xil_defaultlib.ibex_id_stage(RV32E=1'b0,RV32M=1...
+Compiling module xil_defaultlib.custom_module
+Compiling module xil_defaultlib.rem_instr
+Compiling module xil_defaultlib.ibex_alu
+Compiling module xil_defaultlib.ibex_multdiv_fast
+Compiling module xil_defaultlib.ibex_ex_block(RV32M=1'b1)
+Compiling module xil_defaultlib.ibex_load_store_unit
+Compiling module xil_defaultlib.ibex_cs_registers(MHPMCounterNum...
+Compiling module xil_defaultlib.ibex_core(DmHaltAddr=32'b0,DmExc...
+Compiling module xil_defaultlib.ram_1p(Depth=16384)
+Compiling module xil_defaultlib.Binary_To_7Segment
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.PLLE2_ADV(CLKFBOUT_MULT=12,CLKIN...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clkgen_xil7series
+Compiling module xil_defaultlib.top_artya7_100_default
+Compiling module xil_defaultlib.tb_top
+Compiling module xil_defaultlib.glbl
+Compiling package xil_defaultlib.ibex_pkg
+Built simulation snapshot tb_top_behav
+
+****** Webtalk v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source /home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim/xsim.dir/tb_top_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Mar 11 04:04:29 2020...
+run_program: Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 7209.273 ; gain = 0.000 ; free physical = 858 ; free virtual = 7030
+INFO: [USF-XSim-69] 'elaborate' step finished in '20' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_behav -key {Behavioral:sim_1:Functional:tb_top} -tclbatch {tb_top.tcl} -view {/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sim_1/imports/synth-vivado/tb_top_behav1.wcfg} -view {/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sim_1/imports/modulerstuff/cikti.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.1
+Time resolution is 1 ps
+open_wave_config /home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sim_1/imports/synth-vivado/tb_top_behav1.wcfg
+open_wave_config /home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sim_1/imports/modulerstuff/cikti.wcfg
+source tb_top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+              735000: Illegal instruction (hart 0) at PC 0x00000080: 0xxxxxxxxx
+              795000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+              855000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+              915000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+              975000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+xsim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 7209.273 ; gain = 0.000 ; free physical = 804 ; free virtual = 6999
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 7209.273 ; gain = 0.000 ; free physical = 804 ; free virtual = 6999
+run 2 us
+             1035000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             1095000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             1155000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             1215000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             1275000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             1335000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             1395000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             1455000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             1515000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             1575000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             1635000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             1695000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             1755000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             1815000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             1875000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             1935000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             1995000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             2055000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             2115000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             2175000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             2235000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             2295000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             2355000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             2415000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             2475000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             2535000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             2595000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             2655000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             2715000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             2775000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             2835000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             2895000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+             2955000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 7209.273 ; gain = 0.000 ; free physical = 813 ; free virtual = 7018
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Wed Mar 11 04:06:00 2020] Launched synth_1...
+Run output will be captured here: /home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.runs/synth_1/runme.log
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim/cust.mem'
+INFO: [SIM-utils-43] Exported '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim/cust.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L xil_defaultlib -prj tb_top_vlog.prj
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.1
+Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2018.1/bin/unwrapped/lnx64.o/xelab -wto da0d3a6f43854fd5becee3c0b6cd0267 --incr --debug typical --relax --mt 8 -L xilinx_vip -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_fetch_fifo.sv" Line 223 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" Line 260 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" Line 265 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 652 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 663 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 669 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 489 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 495 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 500 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 505 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 510 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_behav -key {Behavioral:sim_1:Functional:tb_top} -tclbatch {tb_top.tcl} -view {/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sim_1/imports/synth-vivado/tb_top_behav1.wcfg} -view {/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sim_1/imports/modulerstuff/cikti.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.1
+Time resolution is 1 ps
+open_wave_config /home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sim_1/imports/synth-vivado/tb_top_behav1.wcfg
+open_wave_config /home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sim_1/imports/modulerstuff/cikti.wcfg
+source tb_top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+              735000: Illegal instruction (hart 0) at PC 0x00000080: 0xxxxxxxxx
+              795000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+              855000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+              915000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+              975000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 7209.273 ; gain = 0.000 ; free physical = 975 ; free virtual = 6998
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim/cust.mem'
+INFO: [SIM-utils-43] Exported '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim/cust.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L xil_defaultlib -prj tb_top_vlog.prj
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.1
+Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2018.1/bin/unwrapped/lnx64.o/xelab -wto da0d3a6f43854fd5becee3c0b6cd0267 --incr --debug typical --relax --mt 8 -L xilinx_vip -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_fetch_fifo.sv" Line 223 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" Line 260 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" Line 265 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 652 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 663 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 669 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 489 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 495 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 500 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 505 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 510 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.1
+Time resolution is 1 ps
+              735000: Illegal instruction (hart 0) at PC 0x00000080: 0xxxxxxxxx
+              795000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+              855000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+              915000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+              975000: Illegal instruction (hart 0) at PC 0x00000000: 0xxxxxxxxx
+relaunch_sim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 7209.273 ; gain = 0.000 ; free physical = 880 ; free virtual = 6930
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim/cust.mem'
+INFO: [SIM-utils-43] Exported '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim/cust.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L xil_defaultlib -prj tb_top_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/clkgen_xil7series.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clkgen_xil7series
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/conversion_to_7display.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Binary_To_7Segment
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/custom_module.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module custom_module
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_alu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_alu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_compressed_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_compressed_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_controller.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_controller
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_core
+WARNING: [VRFC 10-1315] redeclaration of ansi port custom_en_ex is not allowed [/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv:142]
+WARNING: [VRFC 10-1315] redeclaration of ansi port custom_valid_ex is not allowed [/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv:143]
+WARNING: [VRFC 10-1315] redeclaration of ansi port custom_data_ex is not allowed [/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv:144]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ram_addr_out_ex is not allowed [/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv:149]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_cs_registers
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_ex_block.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_ex_block
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_fetch_fifo.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_fetch_fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_id_stage
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_if_stage
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_load_store_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_multdiv_fast.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_multdiv_fast
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_multdiv_slow.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_multdiv_slow
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_pmp.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_pmp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_prefetch_buffer.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_prefetch_buffer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_register_file_ff.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_register_file
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/prim_clock_gating.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module prim_clock_gating
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/ram_1p.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram_1p
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/rem_instr.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rem_instr
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/top_artya7_100.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_artya7_100
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.1
+Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2018.1/bin/unwrapped/lnx64.o/xelab -wto da0d3a6f43854fd5becee3c0b6cd0267 --incr --debug typical --relax --mt 8 -L xilinx_vip -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_fetch_fifo.sv" Line 223 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" Line 260 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" Line 265 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 652 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 663 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 669 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 489 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 495 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 500 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 505 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 510 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/top_artya7_100.sv" Line 5. Module top_artya7_100_default has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv" Line 13. Module ibex_core(DmHaltAddr=32'b0,DmExceptionAddr=32'b0) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/prim_clock_gating.sv" Line 5. Module prim_clock_gating has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/2018.1/nightly/2018_04_04_2188600/data/verilog/src/unisims/BUFGCE.v" Line 26. Module BUFGCE_default has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" Line 12. Module ibex_if_stage(DmHaltAddr=32'b0,DmExceptionAddr=32'b0) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_prefetch_buffer.sv" Line 12. Module ibex_prefetch_buffer has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_fetch_fifo.sv" Line 12. Module ibex_fetch_fifo(NUM_REQS=32'b010) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_compressed_decoder.sv" Line 12. Module ibex_compressed_decoder has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 16. Module ibex_id_stage(RV32E=1'b0,RV32M=1'b1) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_register_file_ff.sv" Line 13. Module ibex_register_file(RV32E=1'b0) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_decoder.sv" Line 14. Module ibex_decoder(RV32E=1'b0,RV32M=1'b1) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_controller.sv" Line 9. Module ibex_controller_1 has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_ex_block.sv" Line 11. Module ibex_ex_block(RV32M=1'b1) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/custom_module.sv" Line 27. Module custom_module has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/rem_instr.sv" Line 33. Module rem_instr has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/rem_instr.sv" Line 33. Module rem_instr has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/rem_instr.sv" Line 33. Module rem_instr has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_alu.sv" Line 9. Module ibex_alu has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_alu.sv" Line 9. Module ibex_alu has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_alu.sv" Line 9. Module ibex_alu has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_multdiv_fast.sv" Line 14. Module ibex_multdiv_fast has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 12. Module ibex_load_store_unit has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv" Line 12. Module ibex_cs_registers(MHPMCounterNum=32'b0,MHPMCounterWidth=32'b0101000,PMPEnable=1'b0,PMPGranularity=32'b0,PMPNumRegions=32'b0100,RV32E=1'b0,RV32M=1'b1) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/ram_1p.sv" Line 9. Module ram_1p(Depth=16384) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/2018.1/nightly/2018_04_04_2188600/data/verilog/src/unisims/IBUF.v" Line 29. Module IBUF has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/2018.1/nightly/2018_04_04_2188600/data/verilog/src/unisims/PLLE2_ADV.v" Line 49. Module PLLE2_ADV(CLKFBOUT_MULT=12,CLKIN1_PERIOD=10.0,CLKOUT0_DIVIDE=24) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/2018.1/nightly/2018_04_04_2188600/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/2018.1/nightly/2018_04_04_2188600/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_pkg.sv" Line 9. Module ibex_pkg has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.BUFGCE_default
+Compiling module xil_defaultlib.prim_clock_gating
+Compiling module xil_defaultlib.ibex_fetch_fifo(NUM_REQS=32'b010...
+Compiling module xil_defaultlib.ibex_prefetch_buffer
+Compiling module xil_defaultlib.ibex_compressed_decoder
+Compiling module xil_defaultlib.ibex_if_stage(DmHaltAddr=32'b0,D...
+Compiling module xil_defaultlib.ibex_register_file(RV32E=1'b0)
+Compiling module xil_defaultlib.ibex_decoder(RV32E=1'b0,RV32M=1'...
+Compiling module xil_defaultlib.ibex_controller_1
+Compiling module xil_defaultlib.ibex_id_stage(RV32E=1'b0,RV32M=1...
+Compiling module xil_defaultlib.custom_module
+Compiling module xil_defaultlib.rem_instr
+Compiling module xil_defaultlib.ibex_alu
+Compiling module xil_defaultlib.ibex_multdiv_fast
+Compiling module xil_defaultlib.ibex_ex_block(RV32M=1'b1)
+Compiling module xil_defaultlib.ibex_load_store_unit
+Compiling module xil_defaultlib.ibex_cs_registers(MHPMCounterNum...
+Compiling module xil_defaultlib.ibex_core(DmHaltAddr=32'b0,DmExc...
+Compiling module xil_defaultlib.ram_1p(Depth=16384)
+Compiling module xil_defaultlib.Binary_To_7Segment
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.PLLE2_ADV(CLKFBOUT_MULT=12,CLKIN...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clkgen_xil7series
+Compiling module xil_defaultlib.top_artya7_100_default
+Compiling module xil_defaultlib.tb_top
+Compiling module xil_defaultlib.glbl
+Compiling package xil_defaultlib.ibex_pkg
+Built simulation snapshot tb_top_behav
+run_program: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 7209.273 ; gain = 0.000 ; free physical = 873 ; free virtual = 6931
+INFO: [USF-XSim-69] 'elaborate' step finished in '11' seconds
+launch_simulation: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 7209.273 ; gain = 0.000 ; free physical = 873 ; free virtual = 6931
+Vivado Simulator 2018.1
+Time resolution is 1 ps
+Initializing SRAM from /home/topalc/Desktop/senior_project/senior_project/sw/arrayler_ve_memory/array_instr_test/array.mem
+relaunch_sim: Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 7209.273 ; gain = 0.000 ; free physical = 871 ; free virtual = 6926
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+run 2 us
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim/cust.mem'
+INFO: [SIM-utils-43] Exported '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim/cust.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L xil_defaultlib -prj tb_top_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/clkgen_xil7series.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clkgen_xil7series
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/conversion_to_7display.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Binary_To_7Segment
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/custom_module.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module custom_module
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_alu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_alu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_compressed_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_compressed_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_controller.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_controller
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_core
+WARNING: [VRFC 10-1315] redeclaration of ansi port custom_en_ex is not allowed [/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv:142]
+WARNING: [VRFC 10-1315] redeclaration of ansi port custom_valid_ex is not allowed [/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv:143]
+WARNING: [VRFC 10-1315] redeclaration of ansi port custom_data_ex is not allowed [/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv:144]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ram_addr_out_ex is not allowed [/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv:149]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_cs_registers
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_ex_block.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_ex_block
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_fetch_fifo.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_fetch_fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_id_stage
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_if_stage
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_load_store_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_multdiv_fast.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_multdiv_fast
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_multdiv_slow.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_multdiv_slow
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_pmp.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_pmp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_prefetch_buffer.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_prefetch_buffer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_register_file_ff.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ibex_register_file
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/prim_clock_gating.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module prim_clock_gating
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/ram_1p.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram_1p
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/rem_instr.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rem_instr
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/top_artya7_100.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_artya7_100
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.1
+Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2018.1/bin/unwrapped/lnx64.o/xelab -wto da0d3a6f43854fd5becee3c0b6cd0267 --incr --debug typical --relax --mt 8 -L xilinx_vip -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_fetch_fifo.sv" Line 223 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" Line 260 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" Line 265 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 652 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 663 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 669 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 489 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 495 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 500 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 505 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+WARNING: [XSIM 43-4127] File "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 510 : The "System Verilog Assertion" is not supported yet for simulation. The statement will be ignored.
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/top_artya7_100.sv" Line 5. Module top_artya7_100_default has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv" Line 13. Module ibex_core(DmHaltAddr=32'b0,DmExceptionAddr=32'b0) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/prim_clock_gating.sv" Line 5. Module prim_clock_gating has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/2018.1/nightly/2018_04_04_2188600/data/verilog/src/unisims/BUFGCE.v" Line 26. Module BUFGCE_default has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" Line 12. Module ibex_if_stage(DmHaltAddr=32'b0,DmExceptionAddr=32'b0) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_prefetch_buffer.sv" Line 12. Module ibex_prefetch_buffer has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_fetch_fifo.sv" Line 12. Module ibex_fetch_fifo(NUM_REQS=32'b010) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_compressed_decoder.sv" Line 12. Module ibex_compressed_decoder has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" Line 16. Module ibex_id_stage(RV32E=1'b0,RV32M=1'b1) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_register_file_ff.sv" Line 13. Module ibex_register_file(RV32E=1'b0) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_decoder.sv" Line 14. Module ibex_decoder(RV32E=1'b0,RV32M=1'b1) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_controller.sv" Line 9. Module ibex_controller_1 has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_ex_block.sv" Line 11. Module ibex_ex_block(RV32M=1'b1) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/custom_module.sv" Line 27. Module custom_module has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/rem_instr.sv" Line 33. Module rem_instr has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/rem_instr.sv" Line 33. Module rem_instr has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/new/rem_instr.sv" Line 33. Module rem_instr has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_alu.sv" Line 9. Module ibex_alu has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_alu.sv" Line 9. Module ibex_alu has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_alu.sv" Line 9. Module ibex_alu has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_multdiv_fast.sv" Line 14. Module ibex_multdiv_fast has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" Line 12. Module ibex_load_store_unit has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv" Line 12. Module ibex_cs_registers(MHPMCounterNum=32'b0,MHPMCounterWidth=32'b0101000,PMPEnable=1'b0,PMPGranularity=32'b0,PMPNumRegions=32'b0100,RV32E=1'b0,RV32M=1'b1) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_top_artya7_100_0.1/rtl/ram_1p.sv" Line 9. Module ram_1p(Depth=16384) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/2018.1/nightly/2018_04_04_2188600/data/verilog/src/unisims/IBUF.v" Line 29. Module IBUF has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/2018.1/nightly/2018_04_04_2188600/data/verilog/src/unisims/PLLE2_ADV.v" Line 49. Module PLLE2_ADV(CLKFBOUT_MULT=12,CLKIN1_PERIOD=10.0,CLKOUT0_DIVIDE=24) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/2018.1/nightly/2018_04_04_2188600/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/2018.1/nightly/2018_04_04_2188600/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.srcs/sources_1/imports/src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_pkg.sv" Line 9. Module ibex_pkg has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.BUFGCE_default
+Compiling module xil_defaultlib.prim_clock_gating
+Compiling module xil_defaultlib.ibex_fetch_fifo(NUM_REQS=32'b010...
+Compiling module xil_defaultlib.ibex_prefetch_buffer
+Compiling module xil_defaultlib.ibex_compressed_decoder
+Compiling module xil_defaultlib.ibex_if_stage(DmHaltAddr=32'b0,D...
+Compiling module xil_defaultlib.ibex_register_file(RV32E=1'b0)
+Compiling module xil_defaultlib.ibex_decoder(RV32E=1'b0,RV32M=1'...
+Compiling module xil_defaultlib.ibex_controller_1
+Compiling module xil_defaultlib.ibex_id_stage(RV32E=1'b0,RV32M=1...
+Compiling module xil_defaultlib.custom_module
+Compiling module xil_defaultlib.rem_instr
+Compiling module xil_defaultlib.ibex_alu
+Compiling module xil_defaultlib.ibex_multdiv_fast
+Compiling module xil_defaultlib.ibex_ex_block(RV32M=1'b1)
+Compiling module xil_defaultlib.ibex_load_store_unit
+Compiling module xil_defaultlib.ibex_cs_registers(MHPMCounterNum...
+Compiling module xil_defaultlib.ibex_core(DmHaltAddr=32'b0,DmExc...
+Compiling module xil_defaultlib.ram_1p(Depth=16384)
+Compiling module xil_defaultlib.Binary_To_7Segment
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.PLLE2_ADV(CLKFBOUT_MULT=12,CLKIN...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clkgen_xil7series
+Compiling module xil_defaultlib.top_artya7_100_default
+Compiling module xil_defaultlib.tb_top
+Compiling module xil_defaultlib.glbl
+Compiling package xil_defaultlib.ibex_pkg
+Built simulation snapshot tb_top_behav
+run_program: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 7209.273 ; gain = 0.000 ; free physical = 600 ; free virtual = 6741
+INFO: [USF-XSim-69] 'elaborate' step finished in '11' seconds
+launch_simulation: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 7209.273 ; gain = 0.000 ; free physical = 600 ; free virtual = 6741
+Vivado Simulator 2018.1
+Time resolution is 1 ps
+Initializing SRAM from /home/topalc/Desktop/projeler/temiz_ibex/sw/NTRU_48_bitM_updated_custom.mem
+relaunch_sim: Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 7209.273 ; gain = 0.000 ; free physical = 594 ; free virtual = 6736
+run 2 us
+run 2 us
+run 2 us
+run 2 s
+run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 7209.273 ; gain = 0.000 ; free physical = 536 ; free virtual = 6703
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+reset_run synth_1
+launch_runs func_test -to_step write_bitstream -jobs 4
+[Wed Mar 11 04:26:52 2020] Launched synth_1...
+Run output will be captured here: /home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.runs/synth_1/runme.log
+[Wed Mar 11 04:26:52 2020] Launched func_test...
+Run output will be captured here: /home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.runs/func_test/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.1
+  **** Build date : Apr  4 2018-18:56:09
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A6EF40A
+set_property PROGRAM.FILE {/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.runs/func_test/top_artya7_100.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/topalc/Desktop/senior_project/senior_project/subat_29_withpins_andfuncs/subat_29_withpins_andfuncs.runs/func_test/top_artya7_100.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292A6EF40A
+close_hw
+open_hw
+open_hw: Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 7209.273 ; gain = 0.000 ; free physical = 1688 ; free virtual = 6308
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 11 05:36:33 2020...

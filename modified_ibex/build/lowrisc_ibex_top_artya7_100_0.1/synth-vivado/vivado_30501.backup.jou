@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Tue Mar 10 22:39:30 2020
+# Process ID: 30501
+# Current directory: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado
+# Command line: vivado -mode batch -source lowrisc_ibex_top_artya7_100_0.1_run.tcl lowrisc_ibex_top_artya7_100_0.1.xpr
+# Log file: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/vivado.log
+# Journal file: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/vivado.jou
+#-----------------------------------------------------------
+open_project lowrisc_ibex_top_artya7_100_0.1.xpr
+source lowrisc_ibex_top_artya7_100_0.1_run.tcl

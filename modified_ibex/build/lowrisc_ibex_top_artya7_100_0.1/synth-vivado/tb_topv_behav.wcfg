@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_top_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="ibex_pkg" />
+            <top_module name="tb_top" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="8830000000fs"></ZoomStartTime>
+      <ZoomEndTime time="5368830000001fs"></ZoomEndTime>
+      <Cursor1Time time="1338830000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="218"></NameColumnWidth>
+      <ValueColumnWidth column_width="84"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="14" />
+   <wave_markers>
+      <marker label="" time="3190000000" />
+   </wave_markers>
+   <wvobject type="logic" fp_name="/tb_top/IO_CLK">
+      <obj_property name="ElementShortName">IO_CLK</obj_property>
+      <obj_property name="ObjectShortName">IO_CLK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/IO_RST_N">
+      <obj_property name="ElementShortName">IO_RST_N</obj_property>
+      <obj_property name="ObjectShortName">IO_RST_N</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/LED1">
+      <obj_property name="ElementShortName">LED1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">LED1[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/dut/u_ram/req_i">
+      <obj_property name="ElementShortName">req_i</obj_property>
+      <obj_property name="ObjectShortName">req_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/dut/u_ram/we_i">
+      <obj_property name="ElementShortName">we_i</obj_property>
+      <obj_property name="ObjectShortName">we_i</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/u_ram/be_i">
+      <obj_property name="ElementShortName">be_i[3:0]</obj_property>
+      <obj_property name="ObjectShortName">be_i[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/u_ram/addr_i">
+      <obj_property name="ElementShortName">addr_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_i[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/u_ram/addr_idx">
+      <obj_property name="ElementShortName">addr_idx[15:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_idx[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/u_ram/wdata_i">
+      <obj_property name="ElementShortName">wdata_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wdata_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/u_ram/rdata_o">
+      <obj_property name="ElementShortName">rdata_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/instr_addr">
+      <obj_property name="ElementShortName">instr_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instr_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/instr_rdata">
+      <obj_property name="ElementShortName">instr_rdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instr_rdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/u_core/id_stage_i/decoder_i/opcode">
+      <obj_property name="ElementShortName">opcode[6:0]</obj_property>
+      <obj_property name="ObjectShortName">opcode[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/u_core/ex_block_i/alu_operator_i">
+      <obj_property name="ElementShortName">alu_operator_i[4:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_operator_i[4:0]</obj_property>
+   </wvobject>
+</wave_config>

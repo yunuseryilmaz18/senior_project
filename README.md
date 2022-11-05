@@ -1,5 +1,5 @@
 # senior_project
-The files for my undergrad graduation project, Extending the Instruction Set Of RISC-V Processor for ASCON Algorithm. I didn't add my compiler modifications but they are written on the thesis.
+The files for my undergrad graduation project, Extending the Instruction Set Of RISC-V Processor for ASCON Algorithm. I didn't add my compiler modifications but they are written on the conference preceeding.
 
 If you have questions and problems about the project, you can open up an issue or send a message to my LinkedIn account, you can reach it from my profile.
 

@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sun Feb  6 23:28:11 2022
+# Process ID: 16868
+# Current directory: F:/home/yunus/sbox/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16928 F:\home\yunus\sbox\build\lowrisc_ibex_top_artya7_100_0.1\synth-vivado\lowrisc_ibex_top_artya7_100_0.1.xpr
+# Log file: F:/home/yunus/sbox/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/vivado.log
+# Journal file: F:/home/yunus/sbox/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project -read_only F:/home/yunus/sbox/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.xpr

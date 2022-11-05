@@ -1,0 +1,32 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  -i "../../../../" --include "/home/yunus/vivado/Vivado/2018.1/data/xilinx_vip/include" \
+"../../../../lowrisc_ibex_top_artya7_100_0.1.srcs/sources_1/ip/ila_0/sim/ila_0.v" \
+
+sv xil_defaultlib  -i "../../../../" --include "/home/yunus/vivado/Vivado/2018.1/data/xilinx_vip/include" \
+"../../../../../src/lowrisc_ibex_fpga_xilinx_shared_0/rtl/fpga/xilinx/clkgen_xil7series.sv" \
+"../../../../../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_pkg.sv" \
+"../../../../../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_alu.sv" \
+"../../../../../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_compressed_decoder.sv" \
+"../../../../../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_controller.sv" \
+"../../../../../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_core.sv" \
+"../../../../../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_cs_registers.sv" \
+"../../../../../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_decoder.sv" \
+"../../../../../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_ex_block.sv" \
+"../../../../../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_fetch_fifo.sv" \
+"../../../../../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_id_stage.sv" \
+"../../../../../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_if_stage.sv" \
+"../../../../../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_load_store_unit.sv" \
+"../../../../../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_multdiv_fast.sv" \
+"../../../../../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_multdiv_slow.sv" \
+"../../../../../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_pmp.sv" \
+"../../../../../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_prefetch_buffer.sv" \
+"../../../../../src/lowrisc_ibex_ibex_core_0.1/rtl/ibex_register_file_ff.sv" \
+"../../../../../src/lowrisc_ibex_fpga_xilinx_shared_0/rtl/fpga/xilinx/prim_clock_gating.sv" \
+"../../../../../src/lowrisc_ibex_fpga_xilinx_shared_0/rtl/ram_1p.sv" \
+"../../../../../src/lowrisc_ibex_top_artya7_100_0.1/rtl/top_artya7_100.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

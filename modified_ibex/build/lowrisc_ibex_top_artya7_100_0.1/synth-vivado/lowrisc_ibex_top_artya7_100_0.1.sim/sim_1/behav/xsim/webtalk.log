@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Webtalk v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Sat Nov  5 19:35:19 2022
+# Process ID: 7392
+# Current directory: /home/yunus/senior_project/modified_ibex/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.sim/sim_1/behav/xsim
+# Command line: wbtcv -mode batch -source /home/yunus/senior_project/modified_ibex/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.sim/sim_1/behav/xsim/xsim.dir/tb_top_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/yunus/senior_project/modified_ibex/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: /home/yunus/senior_project/modified_ibex/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.sim/sim_1/behav/xsim/webtalk.jou
+#-----------------------------------------------------------
+source /home/yunus/senior_project/modified_ibex/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.sim/sim_1/behav/xsim/xsim.dir/tb_top_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sat Nov  5 19:35:20 2022...

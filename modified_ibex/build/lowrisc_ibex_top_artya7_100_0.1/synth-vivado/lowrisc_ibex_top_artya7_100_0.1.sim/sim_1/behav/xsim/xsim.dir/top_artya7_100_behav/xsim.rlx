@@ -1,0 +1,12 @@
+
+{ 
+    crc :  7561592728013520267  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto 82f1a434e53647aaa561e9e84aec0879 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot top_artya7_100_behav xil_defaultlib.top_artya7_100 xil_defaultlib.glbl" , 
+    buildDate : "Apr  4 2018" , 
+    buildTime : "18:43:17" , 
+    linkCmd : "/usr/bin/gcc -Wa,-W  -O -fPIC  -m64  -Wl,--unresolved-symbols=ignore-all  -o \"xsim.dir/top_artya7_100_behav/xsimk\"   \"xsim.dir/top_artya7_100_behav/obj/xsim_0.lnx64.o\" \"xsim.dir/top_artya7_100_behav/obj/xsim_1.lnx64.o\" \"/home/yunus/vivado/Vivado/2018.1/lib/lnx64.o/librdi_simulator_kernel.so\"  \"/home/yunus/vivado/Vivado/2018.1/lib/lnx64.o/librdi_simbridge_kernel.so\"" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 

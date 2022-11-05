@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="ntru_vanilya" LaunchDir="/home/topalc/Desktop/github/senior_project/temiz_ibex/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/ntru_vanilya" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="ntru_vanilya_impl" LaunchDir="/home/topalc/Desktop/github/senior_project/temiz_ibex/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.runs/ntru_vanilya_impl" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
+		<Parent Id="ntru_vanilya"/>
+	</Run>
+</Runs>
+

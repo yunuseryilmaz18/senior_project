@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Wed Mar 11 06:23:28 2020
+# Process ID: 16213
+# Current directory: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/examples/sw/led
+# Command line: vivado
+# Log file: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/examples/sw/led/vivado.log
+# Journal file: /home/topalc/Desktop/projeler/temiz_ibex/unmodified/examples/sw/led/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/topalc/Desktop/projeler/temiz_ibex/unmodified/build/lowrisc_ibex_top_artya7_100_0.1/synth-vivado/lowrisc_ibex_top_artya7_100_0.1.xpr
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+write_schematic -format pdf -orientation landscape /home/topalc/Desktop/schematic.pdf
