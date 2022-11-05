@@ -1,5 +1,5 @@
 
-mainPure.elf:     file format elf32-littleriscv
+main.elf:     file format elf32-littleriscv
 
 
 Disassembly of section .vectors:
@@ -5226,37 +5226,38 @@ Disassembly of section .debug_info:
        6:	0000                	unimp
        8:	0000                	unimp
        a:	0104                	addi	s1,sp,128
-       c:	00b2                	slli	ra,ra,0xc
+       c:	00ba                	slli	ra,ra,0xe
        e:	0000                	unimp
       10:	290c                	fld	fa1,16(a0)
       12:	0000                	unimp
-      14:	3a00                	fld	fs0,48(a2)
+      14:	7300                	flw	fs0,32(a4)
 	...
       22:	0000                	unimp
       24:	0200                	addi	s0,sp,256
       26:	0801                	addi	a6,a6,0
-      28:	0000007b          	0x7b
+      28:	0065                	c.nop	25
+      2a:	0000                	unimp
       2c:	0402                	c.slli64	s0
-      2e:	00005a07          	0x5a07
+      2e:	00004407          	flq	fs0,0(zero) # 0 <__DYNAMIC>
       32:	0200                	addi	s0,sp,256
       34:	0708                	addi	a0,sp,896
-      36:	0050                	addi	a2,sp,4
+      36:	003a                	c.slli	zero,0xe
       38:	0000                	unimp
       3a:	0102                	c.slli64	sp
-      3c:	7d06                	flw	fs10,96(sp)
+      3c:	6706                	flw	fa4,64(sp)
       3e:	0000                	unimp
       40:	0200                	addi	s0,sp,256
       42:	0502                	c.slli64	a0
-      44:	0090                	addi	a2,sp,64
+      44:	0098                	addi	a4,sp,64
       46:	0000                	unimp
       48:	0202                	c.slli64	tp
-      4a:	00009f07          	0x9f07
+      4a:	0000a707          	flw	fa4,0(ra)
       4e:	0200                	addi	s0,sp,256
       50:	0504                	addi	s1,sp,640
       52:	0005                	c.nop	1
       54:	0000                	unimp
       56:	0402                	c.slli64	s0
-      58:	00005507          	0x5507
+      58:	00003f07          	fld	ft10,0(zero) # 0 <__DYNAMIC>
       5c:	0200                	addi	s0,sp,256
       5e:	0508                	addi	a0,sp,640
       60:	0000                	unimp
@@ -5265,10 +5266,10 @@ Disassembly of section .debug_info:
       68:	746e                	flw	fs0,248(sp)
       6a:	0200                	addi	s0,sp,256
       6c:	0410                	addi	a2,sp,512
-      6e:	01ca                	slli	gp,gp,0x12
+      6e:	01d2                	slli	gp,gp,0x14
       70:	0000                	unimp
       72:	0102                	c.slli64	sp
-      74:	8408                	0x8408
+      74:	6e08                	flw	fa0,24(a2)
       76:	0000                	unimp
       78:	0400                	addi	s0,sp,512
       7a:	0030                	addi	a2,sp,8
@@ -5289,7 +5290,7 @@ Disassembly of section .debug_info:
       8e:	2e9c                	fld	fa5,24(a3)
       90:	0002                	c.slli64	zero
       92:	0500                	addi	s0,sp,640
-      94:	0089                	addi	ra,ra,2
+      94:	0091                	addi	ra,ra,4
       96:	0000                	unimp
   *clen = mlen + CRYPTO_ABYTES;
       98:	0801                	addi	a6,a6,0
@@ -5305,7 +5306,7 @@ Disassembly of section .debug_info:
       aa:	0000                	unimp
       ac:	0000                	unimp
       ae:	0700                	addi	s0,sp,896
-      b0:	009a                	slli	ra,ra,0x6
+      b0:	00a2                	slli	ra,ra,0x8
       b2:	0000                	unimp
       b4:	0a01                	addi	s4,s4,0
       b6:	00006407          	0x6407
@@ -5349,7 +5350,7 @@ Disassembly of section .debug_info:
      100:	025e                	slli	tp,tp,0x17
      102:	0000                	unimp
      104:	7ef49103          	lh	sp,2031(s1)
-     108:	00013407          	fld	fs0,0(sp)
+     108:	00013c07          	fld	fs8,0(sp)
      10c:	0100                	addi	s0,sp,128
      10e:	1111                	addi	sp,sp,-28
      110:	026e                	slli	tp,tp,0x1b
@@ -5531,14 +5532,16 @@ Disassembly of section .debug_info:
      284:	0000                	unimp
      286:	0300                	addi	s0,sp,384
      288:	1000                	addi	s0,sp,32
-     28a:	0120                	addi	s0,sp,136
+     28a:	0128                	addi	a0,sp,136
      28c:	0000                	unimp
-     28e:	0120                	addi	s0,sp,136
+     28e:	0128                	addi	a0,sp,136
      290:	0000                	unimp
      292:	1202                	slli	tp,tp,0x20
      294:	1005                	c.nop	-31
-     296:	00000067          	jr	zero # 0 <__DYNAMIC>
-     29a:	00000067          	jr	zero # 0 <__DYNAMIC>
+     296:	0051                	c.nop	20
+     298:	0000                	unimp
+     29a:	0051                	c.nop	20
+     29c:	0000                	unimp
      29e:	1802                	slli	a6,a6,0x20
      2a0:	0005                	c.nop	1
      2a2:	0ecc                	addi	a1,sp,852
@@ -5546,11 +5549,11 @@ Disassembly of section .debug_info:
      2a6:	0004                	0x4
      2a8:	000000eb          	0xeb
      2ac:	0104                	addi	s1,sp,128
-     2ae:	00b2                	slli	ra,ra,0xc
+     2ae:	00ba                	slli	ra,ra,0xe
      2b0:	0000                	unimp
-     2b2:	520c                	lw	a1,32(a2)
+     2b2:	5a0c                	lw	a1,48(a2)
      2b4:	0001                	nop
-     2b6:	3a00                	fld	fs0,48(a2)
+     2b6:	7300                	flw	fs0,32(a4)
      2b8:	0000                	unimp
      2ba:	8c00                	0x8c00
      2bc:	0000                	unimp
@@ -5560,14 +5563,15 @@ Disassembly of section .debug_info:
      2c4:	0001                	nop
      2c6:	0200                	addi	s0,sp,256
      2c8:	0708                	addi	a0,sp,896
-     2ca:	0050                	addi	a2,sp,4
+     2ca:	003a                	c.slli	zero,0xe
      2cc:	0000                	unimp
      2ce:	00387503          	0x387503
      2d2:	0502                	c.slli64	a0
      2d4:	00003717          	auipc	a4,0x3
      2d8:	0200                	addi	s0,sp,256
      2da:	0801                	addi	a6,a6,0
-     2dc:	0000007b          	0x7b
+     2dc:	0065                	c.nop	25
+     2de:	0000                	unimp
      2e0:	3704                	fld	fs1,40(a4)
      2e2:	0000                	unimp
      2e4:	0300                	addi	s0,sp,384
@@ -5578,7 +5582,7 @@ Disassembly of section .debug_info:
      2ee:	0000                	unimp
      2f0:	0200                	addi	s0,sp,256
      2f2:	0704                	addi	s1,sp,896
-     2f4:	005a                	c.slli	zero,0x16
+     2f4:	0044                	addi	s1,sp,4
      2f6:	0000                	unimp
      2f8:	34367503          	0x34367503
      2fc:	0200                	addi	s0,sp,256
@@ -5598,26 +5602,26 @@ Disassembly of section .debug_info:
      31c:	0043070b          	0x43070b
      320:	0000                	unimp
      322:	0004                	0x4
-     324:	00017607          	0x17607
+     324:	00017e07          	0x17e07
      328:	0200                	addi	s0,sp,256
      32a:	030c                	addi	a1,sp,384
      32c:	0062                	c.slli	zero,0x18
      32e:	0000                	unimp
      330:	0102                	c.slli64	sp
-     332:	7d06                	flw	fs10,96(sp)
+     332:	6706                	flw	fa4,64(sp)
      334:	0000                	unimp
      336:	0200                	addi	s0,sp,256
      338:	0502                	c.slli64	a0
-     33a:	0090                	addi	a2,sp,64
+     33a:	0098                	addi	a4,sp,64
      33c:	0000                	unimp
      33e:	0202                	c.slli64	tp
-     340:	00009f07          	0x9f07
+     340:	0000a707          	flw	fa4,0(ra)
      344:	0200                	addi	s0,sp,256
      346:	0504                	addi	s1,sp,640
      348:	0005                	c.nop	1
      34a:	0000                	unimp
      34c:	0402                	c.slli64	s0
-     34e:	00005507          	0x5507
+     34e:	00003f07          	fld	ft10,0(zero) # 0 <__DYNAMIC>
      352:	0200                	addi	s0,sp,256
      354:	0508                	addi	a0,sp,640
      356:	0000                	unimp
@@ -5627,15 +5631,15 @@ Disassembly of section .debug_info:
      35e:	746e                	flw	fs0,248(sp)
      360:	0200                	addi	s0,sp,256
      362:	0410                	addi	a2,sp,512
-     364:	01ca                	slli	gp,gp,0x12
+     364:	01d2                	slli	gp,gp,0x14
      366:	0000                	unimp
      368:	0409                	addi	s0,s0,2
      36a:	00000037          	lui	zero,0x0
      36e:	0102                	c.slli64	sp
-     370:	8408                	0x8408
+     370:	6e08                	flw	fa0,24(a2)
      372:	0000                	unimp
      374:	0a00                	addi	s0,sp,272
-     376:	0120                	addi	s0,sp,136
+     376:	0128                	addi	a0,sp,136
                         const unsigned char* k) {
      378:	0000                	unimp
      37a:	0c01                	addi	s8,s8,0
@@ -5671,7 +5675,7 @@ Disassembly of section .debug_info:
      3b6:	e100                	fsw	fs0,0(a0)
      3b8:	0000                	unimp
      3ba:	0c00                	addi	s0,sp,528
-     3bc:	009a                	slli	ra,ra,0x6
+     3bc:	00a2                	slli	ra,ra,0x8
      3be:	0000                	unimp
      3c0:	0d01                	addi	s10,s10,0
      3c2:	2544                	fld	fs1,136(a0)
@@ -5686,7 +5690,7 @@ Disassembly of section .debug_info:
      3d4:	0000                	unimp
      3d6:	01e6                	slli	gp,gp,0x19
      3d8:	0000                	unimp
-     3da:	4c0c                	lw	a1,24(s0)
+     3da:	540c                	lw	a1,40(s0)
      3dc:	0001                	nop
      3de:	0100                	addi	s0,sp,128
      3e0:	450e                	lw	a0,192(sp)
@@ -5701,7 +5705,7 @@ Disassembly of section .debug_info:
      3f4:	0000                	unimp
      3f6:	02e0                	addi	s0,sp,332
      3f8:	0000                	unimp
-     3fa:	340c                	fld	fa1,40(s0)
+     3fa:	3c0c                	fld	fa1,56(s0)
      3fc:	0001                	nop
      3fe:	0100                	addi	s0,sp,128
      400:	0e92490f          	0xe92490f
@@ -5830,7 +5834,7 @@ Disassembly of section .debug_info:
      4f0:	1915                	addi	s2,s2,-27
      4f2:	0082                	c.slli64	ra
      4f4:	0000                	unimp
-     4f6:	3910                	fld	fa2,48(a0)
+     4f6:	4110                	lw	a2,0(a0)
      4f8:	0001                	nop
      4fa:	0100                	addi	s0,sp,128
      4fc:	0716                	slli	a4,a4,0x5
@@ -5838,7 +5842,7 @@ Disassembly of section .debug_info:
      500:	0000                	unimp
      502:	061d                	addi	a2,a2,7
      504:	0000                	unimp
-     506:	3e10                	fld	fa2,56(a2)
+     506:	4610                	lw	a2,8(a2)
      508:	0001                	nop
      50a:	0100                	addi	s0,sp,128
      50c:	0d16                	slli	s10,s10,0x5
@@ -7271,35 +7275,35 @@ Disassembly of section .debug_info:
     1142:	1700                	addi	s0,sp,928
     1144:	0000004f          	fnmadd.s	ft0,ft0,ft0,ft0,rne
     1148:	0004                	0x4
-    114a:	6618                	flw	fa4,8(a2)
+    114a:	6e18                	flw	fa4,24(a2)
     114c:	0001                	nop
-    114e:	6600                	flw	fs0,8(a2)
+    114e:	6e00                	flw	fs0,24(a2)
     1150:	0001                	nop
     1152:	0200                	addi	s0,sp,256
     1154:	061e                	slli	a2,a2,0x7
-    1156:	4319                	li	t1,6
+    1156:	4b19                	li	s6,6
     1158:	0001                	nop
-    115a:	4300                	lw	s0,0(a4)
+    115a:	4b00                	lw	s0,16(a4)
     115c:	0001                	nop
     115e:	1900                	addi	s0,sp,176
-    1160:	016c                	addi	a1,sp,140
+    1160:	0174                	addi	a3,sp,140
     1162:	0000                	unimp
-    1164:	016c                	addi	a1,sp,140
+    1164:	0174                	addi	a3,sp,140
     1166:	0000                	unimp
-    1168:	5c19                	li	s8,-26
+    1168:	6419                	lui	s0,0x6
     116a:	0001                	nop
-    116c:	5c00                	lw	s0,56(s0)
+    116c:	6400                	flw	fs0,8(s0)
     116e:	0001                	nop
     1170:	0000                	unimp
     1172:	00000113          	li	sp,0
     1176:	0004                	0x4
     1178:	0000024b          	fnmsub.s	ft4,ft0,ft0,ft0,rne
     117c:	0104                	addi	s1,sp,128
-    117e:	00b2                	slli	ra,ra,0xc
+    117e:	00ba                	slli	ra,ra,0xe
     1180:	0000                	unimp
-    1182:	7c0c                	flw	fa1,56(s0)
+    1182:	840c                	0x840c
     1184:	0001                	nop
-    1186:	3a00                	fld	fs0,48(a2)
+    1186:	7300                	flw	fs0,32(a4)
     1188:	0000                	unimp
     118a:	7800                	flw	fs0,48(s0)
     118c:	001e                	c.slli	zero,0x7
@@ -7308,19 +7312,20 @@ Disassembly of section .debug_info:
     1194:	0014                	0x14
     1196:	0200                	addi	s0,sp,256
     1198:	0801                	addi	a6,a6,0
-    119a:	0000007b          	0x7b
+    119a:	0065                	c.nop	25
+    119c:	0000                	unimp
     119e:	32337503          	0x32337503
     11a2:	0200                	addi	s0,sp,256
     11a4:	1606                	slli	a2,a2,0x21
     11a6:	0038                	addi	a4,sp,8
     11a8:	0000                	unimp
     11aa:	0402                	c.slli64	s0
-    11ac:	00005a07          	0x5a07
+    11ac:	00004407          	flq	fs0,0(zero) # 0 <__DYNAMIC>
       s_o[0] ^= t0.o;
     11b0:	0200                	addi	s0,sp,256
     11b2:	0708                	addi	a0,sp,896
       to_bit_interleaving(t1, U64BIG(*(u64*)(ad + 8)));
-    11b4:	0050                	addi	a2,sp,4
+    11b4:	003a                	c.slli	zero,0xe
     11b6:	0000                	unimp
       s_o[0] ^= t0.o;
     11b8:	0804                	addi	s1,sp,16
@@ -7342,7 +7347,7 @@ Disassembly of section .debug_info:
       to_bit_interleaving(t1, U64BIG(*(u64*)(ad + 8)));
     11d4:	0000                	unimp
     11d6:	0004                	0x4
-    11d8:	7606                	flw	fa2,96(sp)
+    11d8:	7e06                	flw	ft8,96(sp)
     11da:	0001                	nop
     11dc:	0200                	addi	s0,sp,256
     11de:	030c                	addi	a1,sp,384
@@ -7350,7 +7355,7 @@ Disassembly of section .debug_info:
     11e0:	0046                	c.slli	zero,0x11
     11e2:	0000                	unimp
       to_bit_interleaving(t1, U64BIG(*(u64*)(ad + 8)));
-    11e4:	00016607          	0x16607
+    11e4:	00016e07          	0x16e07
     11e8:	0100                	addi	s0,sp,128
     11ea:	0605                	addi	a2,a2,1
     11ec:	1e78                	addi	a4,sp,828
@@ -7424,13 +7429,12 @@ Disassembly of section .debug_info:
     128a:	0400000f          	fence	o,unknown
     128e:	0000                	unimp
     1290:	04000003          	lb	zero,64(zero) # 40 <__DYNAMIC+0x40>
-    1294:	b201                	j	b94 <crypto_aead_encrypt+0xb08>
+    1294:	ba01                	j	ba4 <crypto_aead_encrypt+0xb18>
     1296:	0000                	unimp
     1298:	0c00                	addi	s0,sp,528
-    129a:	0184                	addi	s1,sp,192
+    129a:	018c                	addi	a1,sp,192
     129c:	0000                	unimp
-    129e:	003a                	c.slli	zero,0xe
-    12a0:	0000                	unimp
+    129e:	00000073          	ecall
     12a2:	21dc                	fld	fa5,128(a1)
     12a4:	0000                	unimp
     12a6:	1d04                	addi	s1,sp,688
@@ -7438,14 +7442,14 @@ Disassembly of section .debug_info:
     12aa:	1b0a                	slli	s6,s6,0x22
     12ac:	0000                	unimp
     12ae:	0802                	c.slli64	a6
-    12b0:	00005007          	0x5007
+    12b0:	00003a07          	fld	fs4,0(zero) # 0 <__DYNAMIC>
     12b4:	0300                	addi	s0,sp,384
     12b6:	3875                	jal	b72 <crypto_aead_encrypt+0xae6>
     12b8:	0200                	addi	s0,sp,256
     12ba:	1705                	addi	a4,a4,-31
     12bc:	00000037          	lui	zero,0x0
     12c0:	0102                	c.slli64	sp
-    12c2:	7b08                	flw	fa0,48(a4)
+    12c2:	6508                	flw	fa0,8(a0)
     12c4:	0000                	unimp
     12c6:	0400                	addi	s0,sp,512
     12c8:	00000037          	lui	zero,0x0
@@ -7454,7 +7458,7 @@ Disassembly of section .debug_info:
     12d2:	1606                	slli	a2,a2,0x21
     12d4:	0000004f          	fnmadd.s	ft0,ft0,ft0,ft0,rne
     12d8:	0402                	c.slli64	s0
-    12da:	00005a07          	0x5a07
+    12da:	00004407          	flq	fs0,0(zero) # 0 <__DYNAMIC>
     12de:	0300                	addi	s0,sp,384
       s_e[1] ^= t1.e;
     12e0:	3675                	jal	e8c <crypto_aead_encrypt+0xe00>
@@ -7481,48 +7485,45 @@ Disassembly of section .debug_info:
     1308:	0400                	addi	s0,sp,512
     130a:	0700                	addi	s0,sp,896
       s_o[1] ^= t1.o;
-    130c:	0176                	slli	sp,sp,0x1d
+    130c:	017e                	slli	sp,sp,0x1f
     130e:	0000                	unimp
       P8();
     1310:	0c02                	c.slli64	s8
     1312:	00006203          	0x6203
     1316:	0200                	addi	s0,sp,256
     1318:	0601                	addi	a2,a2,0
-    131a:	007d                	c.nop	31
-    131c:	0000                	unimp
+    131a:	00000067          	jr	zero # 0 <__DYNAMIC>
     131e:	0202                	c.slli64	tp
-    1320:	9005                	srli	s0,s0,0x21
+    1320:	9805                	andi	s0,s0,-31
     1322:	0000                	unimp
     1324:	0200                	addi	s0,sp,256
     1326:	0702                	c.slli64	a4
       to_bit_interleaving(t1, U64BIG(*(u64*)(ad + 8)));
-    1328:	009f 0000 0402      	0x4020000009f
+    1328:	000000a7          	0xa7
       s_o[1] ^= t1.o;
+    132c:	0402                	c.slli64	s0
     132e:	0505                	addi	a0,a0,1
       P8();
     1330:	0000                	unimp
     1332:	0200                	addi	s0,sp,256
     1334:	0704                	addi	s1,sp,896
-    1336:	0055                	c.nop	21
-    1338:	0000                	unimp
-    133a:	0802                	c.slli64	a6
-    133c:	0005                	c.nop	1
+    1336:	0000003f 00050802 	0x508020000003f
     133e:	0000                	unimp
     1340:	0800                	addi	s0,sp,16
     1342:	0504                	addi	s1,sp,640
     1344:	6e69                	lui	t3,0x1a
     1346:	0074                	addi	a3,sp,12
     1348:	1002                	c.slli	zero,0x20
-    134a:	ca04                	sw	s1,16(a2)
+    134a:	d204                	sw	s1,32(a2)
     134c:	0001                	nop
     134e:	0900                	addi	s0,sp,144
     1350:	3704                	fld	fs1,40(a4)
     1352:	0000                	unimp
     1354:	0200                	addi	s0,sp,256
     1356:	0801                	addi	a6,a6,0
-    1358:	0084                	addi	s1,sp,64
+    1358:	006e                	c.slli	zero,0x1b
     135a:	0000                	unimp
-    135c:	670a                	flw	fa4,128(sp)
+    135c:	510a                	lw	sp,160(sp)
     135e:	0000                	unimp
     1360:	0100                	addi	s0,sp,128
     1362:	050c                	addi	a1,sp,640
@@ -7540,7 +7541,7 @@ Disassembly of section .debug_info:
     137c:	00c6                	slli	ra,ra,0x11
     137e:	0000                	unimp
     1380:	000031fb          	0x31fb
-    1384:	9a0c                	0x9a0c
+    1384:	a20c                	fsd	fa1,0(a2)
     1386:	0000                	unimp
     1388:	0100                	addi	s0,sp,128
     138a:	3f0c                	fld	fa1,56(a4)
@@ -7577,7 +7578,7 @@ Disassembly of section .debug_info:
       adlen -= RATE;
     13cc:	ae00                	fsd	fs0,24(a2)
     13ce:	0c000033          	0xc000033
-    13d2:	014c                	addi	a1,sp,132
+    13d2:	0154                	addi	a3,sp,132
     13d4:	0000                	unimp
     13d6:	0f01                	addi	t5,t5,0
     13d8:	252c                	fld	fa1,72(a0)
@@ -7586,7 +7587,7 @@ Disassembly of section .debug_info:
     13de:	0034                	addi	a3,sp,8
       ad += RATE;
     13e0:	0d00                	addi	s0,sp,656
-    13e2:	0134                	addi	a3,sp,136
+    13e2:	013c                	addi	a5,sp,136
       s_e[1] ^= t1.e;
     13e4:	0000                	unimp
     13e6:	0f01                	addi	t5,t5,0
@@ -7703,13 +7704,13 @@ Disassembly of section .debug_info:
     14d2:	8219                	srli	a2,a2,0x6
     14d4:	0000                	unimp
     14d6:	1200                	addi	s0,sp,288
-    14d8:	0139                	addi	sp,sp,14
+    14d8:	0141                	addi	sp,sp,16
     14da:	0000                	unimp
     14dc:	1b01                	addi	s6,s6,-32
     14de:	00005607          	0x5607
     14e2:	e400                	fsw	fs0,8(s0)
     14e4:	12000037          	lui	zero,0x12000
-    14e8:	013e                	slli	sp,sp,0xf
+    14e8:	0146                	slli	sp,sp,0x11
     14ea:	0000                	unimp
     14ec:	1b01                	addi	s6,s6,-32
     14ee:	560d                	li	a2,-29
@@ -9277,26 +9278,26 @@ Disassembly of section .debug_info:
     2160:	0000004f          	fnmadd.s	ft0,ft0,ft0,ft0,rne
   t4.e  = s_e[4] ^ ROTR32(s_e[4], 17);  t4.o  = s_o[4] ^ ROTR32(s_o[4], 17); 
     2164:	0004                	0x4
-    2166:	661a                	flw	fa2,132(sp)
+    2166:	6e1a                	flw	ft8,132(sp)
   s_e[3] ^= ROTR32(t3.e, 5);            s_o[3] ^= ROTR32(t3.o, 5); 
     2168:	0001                	nop
-    216a:	6600                	flw	fs0,8(a2)
+    216a:	6e00                	flw	fs0,24(a2)
   t4.e  = s_e[4] ^ ROTR32(s_e[4], 17);  t4.o  = s_o[4] ^ ROTR32(s_o[4], 17); 
     216c:	0001                	nop
     216e:	0200                	addi	s0,sp,256
     2170:	061e                	slli	a2,a2,0x7
-    2172:	0001431b          	0x1431b
-    2176:	4300                	lw	s0,0(a4)
+    2172:	00014b1b          	0x14b1b
+    2176:	4b00                	lw	s0,16(a4)
   s_e[3] ^= ROTR32(t3.e, 5);            s_o[3] ^= ROTR32(t3.o, 5); 
     2178:	0001                	nop
     217a:	1b00                	addi	s0,sp,432
   s_e[4] ^= ROTR32(t4.o, 3);            s_o[4] ^= ROTR32(t4.e, 4); 
-    217c:	016c                	addi	a1,sp,140
+    217c:	0174                	addi	a3,sp,140
     217e:	0000                	unimp
-    2180:	016c                	addi	a1,sp,140
+    2180:	0174                	addi	a3,sp,140
     2182:	0000                	unimp
-    2184:	00015c1b          	0x15c1b
-    2188:	5c00                	lw	s0,56(s0)
+    2184:	0001641b          	0x1641b
+    2188:	6400                	flw	fs0,8(s0)
     218a:	0001                	nop
     218c:	0000                	unimp
     218e:	001e                	c.slli	zero,0x7
@@ -9310,12 +9311,11 @@ Disassembly of section .debug_info:
     219c:	0000                	unimp
     219e:	0750                	addi	a2,sp,900
     21a0:	0000                	unimp
-    21a2:	018e                	slli	gp,gp,0x3
+    21a2:	0196                	slli	gp,gp,0x5
   s_e[4] ^= ROTR32(t4.o, 3);            s_o[4] ^= ROTR32(t4.e, 4); 
     21a4:	0000                	unimp
-    21a6:	003a                	c.slli	zero,0xe
-    21a8:	0000                	unimp
-    21aa:	0195                	addi	gp,gp,5
+    21a6:	00000073          	ecall
+    21aa:	019d                	addi	gp,gp,7
     21ac:	0000                	unimp
     21ae:	8001                	c.srli64	s0
     21b0:	01a8                	addi	a0,sp,200
@@ -9325,11 +9325,11 @@ Disassembly of section .debug_info:
     21b8:	0000                	unimp
     21ba:	0104                	addi	s1,sp,128
   s_e[2] = ~s_e[2];                                  s_o[2] = ~s_o[2]; 
-    21bc:	01d6                	slli	gp,gp,0x15
+    21bc:	01de                	slli	gp,gp,0x17
     21be:	0000                	unimp
-    21c0:	f70c                	fsw	fa1,40(a4)
+    21c0:	ff0c                	fsw	fa1,56(a4)
     21c2:	0002                	c.slli64	zero
-    21c4:	9500                	0x9500
+    21c4:	9d00                	0x9d00
     21c6:	0002                	c.slli64	zero
     21c8:	7c00                	flw	fs0,56(s0)
     21ca:	0040                	addi	s0,sp,4
@@ -9340,49 +9340,48 @@ Disassembly of section .debug_info:
 }
     21d4:	0200                	addi	s0,sp,256
     21d6:	0708                	addi	a0,sp,896
-    21d8:	0050                	addi	a2,sp,4
+    21d8:	003a                	c.slli	zero,0xe
     21da:	0000                	unimp
                         const unsigned char* k) {
     21dc:	69050403          	lb	s0,1680(a0)
     21e0:	746e                	flw	fs0,248(sp)
     21e2:	0200                	addi	s0,sp,256
     21e4:	0704                	addi	s1,sp,896
-    21e6:	005a                	c.slli	zero,0x16
+    21e6:	0044                	addi	s1,sp,4
     21e8:	0000                	unimp
     21ea:	0802                	c.slli64	a6
     21ec:	0005                	c.nop	1
     21ee:	0000                	unimp
     21f0:	0200                	addi	s0,sp,256
     21f2:	0410                	addi	a2,sp,512
-    21f4:	01ca                	slli	gp,gp,0x12
+    21f4:	01d2                	slli	gp,gp,0x14
     21f6:	0000                	unimp
     21f8:	0102                	c.slli64	sp
-    21fa:	7d06                	flw	fs10,96(sp)
+    21fa:	6706                	flw	fa4,64(sp)
     21fc:	0000                	unimp
     21fe:	0200                	addi	s0,sp,256
     2200:	0801                	addi	a6,a6,0
-    2202:	0000007b          	0x7b
+    2202:	0065                	c.nop	25
+    2204:	0000                	unimp
     2206:	0202                	c.slli64	tp
-    2208:	9005                	srli	s0,s0,0x21
+    2208:	9805                	andi	s0,s0,-31
     220a:	0000                	unimp
     220c:	0200                	addi	s0,sp,256
     220e:	0702                	c.slli64	a4
-    2210:	009f 0000 0402      	0x4020000009f
+    2210:	000000a7          	0xa7
+    2214:	0402                	c.slli64	s0
     2216:	0505                	addi	a0,a0,1
     2218:	0000                	unimp
     221a:	0200                	addi	s0,sp,256
     221c:	0704                	addi	s1,sp,896
-    221e:	0055                	c.nop	21
-    2220:	0000                	unimp
-    2222:	0102                	c.slli64	sp
-    2224:	8408                	0x8408
+    221e:	0000003f 6e080102 	0x6e0801020000003f
     2226:	0000                	unimp
     2228:	0400                	addi	s0,sp,512
-    222a:	000001b3          	add	gp,zero,zero
+    222a:	000001bb          	0x1bb
     222e:	8002                	0x8002
     2230:	00002c0f          	0x2c0f
     2234:	0400                	addi	s0,sp,512
-    2236:	01b2                	slli	gp,gp,0xc
+    2236:	01ba                	slli	gp,gp,0xe
     2238:	0000                	unimp
     223a:	8102                	jr	sp
     223c:	3316                	fld	ft6,352(sp)
@@ -9391,31 +9390,31 @@ Disassembly of section .debug_info:
     2240:	0500                	addi	s0,sp,640
     2242:	0085                	addi	ra,ra,1
     2244:	0000                	unimp
-    2246:	2e04                	fld	fs1,24(a2)
+    2246:	3604                	fld	fs1,40(a2)
     2248:	02000003          	lb	zero,32(zero) # 20 <__DYNAMIC+0x20>
     *mlen = 0;
     224c:	0f84                	addi	s1,sp,976
     224e:	003a                	c.slli	zero,0xe
     2250:	0000                	unimp
     2252:	0402                	c.slli64	s0
-    2254:	8f04                	0x8f04
+    2254:	9704                	0x9704
     2256:	0002                	c.slli64	zero
     2258:	0200                	addi	s0,sp,256
     225a:	0308                	addi	a0,sp,384
-    225c:	00000287          	0x287
+    225c:	0000028f          	0x28f
     return -1;
     2260:	0802                	c.slli64	a6
-    2262:	cf04                	sw	s1,24(a4)
+    2262:	d704                	sw	s1,40(a4)
 }
     2264:	0001                	nop
     2266:	0200                	addi	s0,sp,256
     2268:	0310                	addi	a2,sp,384
-    226a:	02e8                	addi	a0,sp,332
+    226a:	02f0                	addi	a2,sp,332
     226c:	0000                	unimp
     226e:	2002                	fld	ft0,0(sp)
-    2270:	0001c203          	lbu	tp,0(gp)
+    2270:	0001ca03          	lbu	s4,0(gp)
     2274:	0400                	addi	s0,sp,512
-    2276:	031d                	addi	t1,t1,7
+    2276:	0325                	addi	t1,t1,9
     2278:	0000                	unimp
     227a:	a402                	fsd	ft0,8(sp)
     227c:	2c0d                	jal	24ae <crypto_aead_decrypt+0x2d2>
@@ -9423,7 +9422,7 @@ Disassembly of section .debug_info:
     2280:	0500                	addi	s0,sp,640
     2282:	00c5                	addi	ra,ra,17
     2284:	0000                	unimp
-    2286:	a106                	fsd	ft1,128(sp)
+    2286:	a906                	fsd	ft1,144(sp)
     2288:	0001                	nop
     228a:	0800                	addi	s0,sp,16
     228c:	ed02                	fsw	ft0,152(sp)
@@ -9437,7 +9436,7 @@ Disassembly of section .debug_info:
     229e:	0000                	unimp
   *mlen = clen - CRYPTO_ABYTES;
     22a0:	0000                	unimp
-    22a2:	9d08                	0x9d08
+    22a2:	a508                	fsd	fa0,8(a0)
     22a4:	02000003          	lb	zero,32(zero) # 20 <__DYNAMIC+0x20>
     22a8:	01ed                	addi	gp,gp,27
     22aa:	791f 0000 0400      	0x4000000791f
@@ -9461,7 +9460,7 @@ Disassembly of section .debug_info:
     22ce:	0096                	slli	ra,ra,0x5
     22d0:	0000                	unimp
     22d2:	0b00                	addi	s0,sp,400
-    22d4:	01ba                	slli	gp,gp,0xe
+    22d4:	01c2                	slli	gp,gp,0x10
     22d6:	0000                	unimp
     22d8:	f802                	fsw	ft0,48(sp)
     22da:	0301                	addi	t1,t1,0
@@ -9470,7 +9469,7 @@ Disassembly of section .debug_info:
     22e0:	2305                	jal	2800 <crypto_aead_decrypt+0x624>
     22e2:	0001                	nop
     22e4:	0c00                	addi	s0,sp,528
-    22e6:	015c                	addi	a5,sp,132
+    22e6:	0164                	addi	s1,sp,140
     22e8:	0000                	unimp
     22ea:	9401                	srai	s0,s0,0x20
     22ec:	0101                	addi	sp,sp,0
@@ -9515,7 +9514,7 @@ Disassembly of section .debug_info:
     2342:	0000                	unimp
     2344:	0010                	0x10
     2346:	0000                	unimp
-    2348:	aa12                	fsd	ft4,272(sp)
+    2348:	b212                	fsd	ft4,288(sp)
     234a:	0001                	nop
     234c:	0100                	addi	s0,sp,128
     234e:	01a4                	addi	s1,sp,200
@@ -9530,11 +9529,11 @@ Disassembly of section .debug_info:
     2362:	05ac                	addi	a1,sp,712
     2364:	0000                	unimp
     2366:	0104                	addi	s1,sp,128
-    2368:	01d6                	slli	gp,gp,0x15
+    2368:	01de                	slli	gp,gp,0x17
     236a:	0000                	unimp
-    236c:	f70c                	fsw	fa1,40(a4)
+    236c:	ff0c                	fsw	fa1,56(a4)
     236e:	0002                	c.slli64	zero
-    2370:	9500                	0x9500
+    2370:	9d00                	0x9d00
     2372:	0002                	c.slli64	zero
     2374:	a600                	fsd	fs0,8(a2)
     2376:	0040                	addi	s0,sp,4
@@ -9543,48 +9542,47 @@ Disassembly of section .debug_info:
     237c:	dc00                	sw	s0,56(s0)
     237e:	0200002f          	0x200002f
     2382:	0708                	addi	a0,sp,896
-    2384:	0050                	addi	a2,sp,4
+    2384:	003a                	c.slli	zero,0xe
     2386:	0000                	unimp
     2388:	69050403          	lb	s0,1680(a0) # fffe3690 <_stack_start+0xfffcd488>
     238c:	746e                	flw	fs0,248(sp)
     238e:	0200                	addi	s0,sp,256
     2390:	0704                	addi	s1,sp,896
-    2392:	005a                	c.slli	zero,0x16
+    2392:	0044                	addi	s1,sp,4
     2394:	0000                	unimp
     2396:	0802                	c.slli64	a6
     2398:	0005                	c.nop	1
     239a:	0000                	unimp
     239c:	0200                	addi	s0,sp,256
     239e:	0410                	addi	a2,sp,512
-    23a0:	01ca                	slli	gp,gp,0x12
+    23a0:	01d2                	slli	gp,gp,0x14
     23a2:	0000                	unimp
     23a4:	0102                	c.slli64	sp
-    23a6:	7d06                	flw	fs10,96(sp)
+    23a6:	6706                	flw	fa4,64(sp)
     23a8:	0000                	unimp
     23aa:	0200                	addi	s0,sp,256
     23ac:	0801                	addi	a6,a6,0
-    23ae:	0000007b          	0x7b
+    23ae:	0065                	c.nop	25
+    23b0:	0000                	unimp
     23b2:	0202                	c.slli64	tp
-    23b4:	9005                	srli	s0,s0,0x21
+    23b4:	9805                	andi	s0,s0,-31
     23b6:	0000                	unimp
     23b8:	0200                	addi	s0,sp,256
     23ba:	0702                	c.slli64	a4
-    23bc:	009f 0000 0402      	0x4020000009f
+    23bc:	000000a7          	0xa7
+    23c0:	0402                	c.slli64	s0
     23c2:	0505                	addi	a0,a0,1
     23c4:	0000                	unimp
     23c6:	0200                	addi	s0,sp,256
     23c8:	0704                	addi	s1,sp,896
-    23ca:	0055                	c.nop	21
-    23cc:	0000                	unimp
-    23ce:	0102                	c.slli64	sp
-    23d0:	8408                	0x8408
+    23ca:	0000003f 6e080102 	0x6e0801020000003f
     23d2:	0000                	unimp
     23d4:	0400                	addi	s0,sp,512
-    23d6:	000001b3          	add	gp,zero,zero
+    23d6:	000001bb          	0x1bb
     23da:	8002                	0x8002
     23dc:	00002c0f          	0x2c0f
     23e0:	0400                	addi	s0,sp,512
-    23e2:	01b2                	slli	gp,gp,0xc
+    23e2:	01ba                	slli	gp,gp,0xe
     23e4:	0000                	unimp
     23e6:	8102                	jr	sp
     23e8:	3316                	fld	ft6,352(sp)
@@ -9592,32 +9590,32 @@ Disassembly of section .debug_info:
     23ec:	0500                	addi	s0,sp,640
     23ee:	0085                	addi	ra,ra,1
     23f0:	0000                	unimp
-    23f2:	2e04                	fld	fs1,24(a2)
+    23f2:	3604                	fld	fs1,40(a2)
     23f4:	02000003          	lb	zero,32(zero) # 20 <__DYNAMIC+0x20>
     23f8:	0f84                	addi	s1,sp,976
     23fa:	003a                	c.slli	zero,0xe
     23fc:	0000                	unimp
     23fe:	0402                	c.slli64	s0
-    2400:	8f04                	0x8f04
+    2400:	9704                	0x9704
     2402:	0002                	c.slli64	zero
     2404:	0200                	addi	s0,sp,256
     2406:	0308                	addi	a0,sp,384
-    2408:	00000287          	0x287
+    2408:	0000028f          	0x28f
     240c:	0802                	c.slli64	a6
-    240e:	cf04                	sw	s1,24(a4)
+    240e:	d704                	sw	s1,40(a4)
   to_bit_interleaving(K1, U64BIG(*(u64*)(k + 8)));
     2410:	0001                	nop
     2412:	0200                	addi	s0,sp,256
   to_bit_interleaving(K0, U64BIG(*(u64*)k));
     2414:	0310                	addi	a2,sp,384
-    2416:	02e8                	addi	a0,sp,332
+    2416:	02f0                	addi	a2,sp,332
   to_bit_interleaving(K1, U64BIG(*(u64*)(k + 8)));
     2418:	0000                	unimp
     241a:	2002                	fld	ft0,0(sp)
   to_bit_interleaving(K0, U64BIG(*(u64*)k));
-    241c:	0001c203          	lbu	tp,0(gp)
+    241c:	0001ca03          	lbu	s4,0(gp)
     2420:	0400                	addi	s0,sp,512
-    2422:	031d                	addi	t1,t1,7
+    2422:	0325                	addi	t1,t1,9
     2424:	0000                	unimp
     2426:	a402                	fsd	ft0,8(sp)
     2428:	2c0d                	jal	265a <crypto_aead_decrypt+0x47e>
@@ -9627,7 +9625,7 @@ Disassembly of section .debug_info:
     242e:	00c5                	addi	ra,ra,17
   to_bit_interleaving(K0, U64BIG(*(u64*)k));
     2430:	0000                	unimp
-    2432:	a106                	fsd	ft1,128(sp)
+    2432:	a906                	fsd	ft1,144(sp)
   to_bit_interleaving(K1, U64BIG(*(u64*)(k + 8)));
     2434:	0001                	nop
     2436:	0800                	addi	s0,sp,16
@@ -9641,7 +9639,7 @@ Disassembly of section .debug_info:
     2448:	791a                	flw	fs2,164(sp)
     244a:	0000                	unimp
     244c:	0000                	unimp
-    244e:	9d08                	0x9d08
+    244e:	a508                	fsd	fa0,8(a0)
     2450:	02000003          	lb	zero,32(zero) # 20 <__DYNAMIC+0x20>
     2454:	01ed                	addi	gp,gp,27
     2456:	791f 0000 0400      	0x4000000791f
@@ -9662,7 +9660,7 @@ Disassembly of section .debug_info:
     247a:	0096                	slli	ra,ra,0x5
     247c:	0000                	unimp
     247e:	0b00                	addi	s0,sp,400
-    2480:	01ba                	slli	gp,gp,0xe
+    2480:	01c2                	slli	gp,gp,0x10
     2482:	0000                	unimp
     2484:	f802                	fsw	ft0,48(sp)
     2486:	0301                	addi	t1,t1,0
@@ -9671,7 +9669,7 @@ Disassembly of section .debug_info:
     248c:	2305                	jal	29ac <crypto_aead_decrypt+0x7d0>
     248e:	0001                	nop
     2490:	0c00                	addi	s0,sp,528
-    2492:	016c                	addi	a1,sp,140
+    2492:	0174                	addi	a3,sp,140
     2494:	0000                	unimp
     2496:	b001                	j	1c96 <crypto_aead_encrypt+0x1c0a>
     2498:	0101                	addi	sp,sp,0
@@ -9715,7 +9713,7 @@ Disassembly of section .debug_info:
     24ee:	0000                	unimp
     24f0:	0010                	0x10
     24f2:	0000                	unimp
-    24f4:	aa12                	fsd	ft4,272(sp)
+    24f4:	b212                	fsd	ft4,288(sp)
     24f6:	0001                	nop
     24f8:	0100                	addi	s0,sp,128
     24fa:	01c0                	addi	s0,sp,196
@@ -9730,10 +9728,10 @@ Disassembly of section .debug_info:
     250e:	06c4                	addi	s1,sp,836
     2510:	0000                	unimp
     2512:	0104                	addi	s1,sp,128
-    2514:	01d6                	slli	gp,gp,0x15
+    2514:	01de                	slli	gp,gp,0x17
     2516:	0000                	unimp
-    2518:	570c                	lw	a1,40(a4)
-    251a:	95000003          	lb	zero,-1712(zero) # fffff950 <_stack_start+0xfffe9748>
+    2518:	5f0c                	lw	a1,56(a4)
+    251a:	9d000003          	lb	zero,-1584(zero) # fffff9d0 <_stack_start+0xfffe97c8>
     251e:	0002                	c.slli64	zero
     2520:	d000                	sw	s0,32(s0)
     2522:	0040                	addi	s0,sp,4
@@ -9743,80 +9741,79 @@ Disassembly of section .debug_info:
     252a:	0031                	c.nop	12
     252c:	0200                	addi	s0,sp,256
     252e:	0708                	addi	a0,sp,896
-    2530:	0050                	addi	a2,sp,4
+    2530:	003a                	c.slli	zero,0xe
     2532:	0000                	unimp
     2534:	69050403          	lb	s0,1680(a0) # fffe3690 <_stack_start+0xfffcd488>
     2538:	746e                	flw	fs0,248(sp)
     253a:	0200                	addi	s0,sp,256
     253c:	0704                	addi	s1,sp,896
-    253e:	005a                	c.slli	zero,0x16
+    253e:	0044                	addi	s1,sp,4
     2540:	0000                	unimp
     2542:	0802                	c.slli64	a6
     2544:	0005                	c.nop	1
     2546:	0000                	unimp
     2548:	0200                	addi	s0,sp,256
     254a:	0410                	addi	a2,sp,512
-    254c:	01ca                	slli	gp,gp,0x12
+    254c:	01d2                	slli	gp,gp,0x14
     254e:	0000                	unimp
   to_bit_interleaving(N0, U64BIG(*(u64*)npub));
     2550:	0102                	c.slli64	sp
-    2552:	7d06                	flw	fs10,96(sp)
+    2552:	6706                	flw	fa4,64(sp)
   to_bit_interleaving(K0, U64BIG(*(u64*)k));
     2554:	0000                	unimp
     2556:	0200                	addi	s0,sp,256
   to_bit_interleaving(K1, U64BIG(*(u64*)(k + 8)));
     2558:	0801                	addi	a6,a6,0
-    255a:	0000007b          	0x7b
+    255a:	0065                	c.nop	25
   to_bit_interleaving(N0, U64BIG(*(u64*)npub));
+    255c:	0000                	unimp
     255e:	0202                	c.slli64	tp
   to_bit_interleaving(K1, U64BIG(*(u64*)(k + 8)));
-    2560:	9005                	srli	s0,s0,0x21
+    2560:	9805                	andi	s0,s0,-31
     2562:	0000                	unimp
     2564:	0200                	addi	s0,sp,256
     2566:	0702                	c.slli64	a4
-    2568:	009f 0000 0402      	0x4020000009f
+    2568:	000000a7          	0xa7
   to_bit_interleaving(N0, U64BIG(*(u64*)npub));
+    256c:	0402                	c.slli64	s0
     256e:	0505                	addi	a0,a0,1
   to_bit_interleaving(K1, U64BIG(*(u64*)(k + 8)));
     2570:	0000                	unimp
     2572:	0200                	addi	s0,sp,256
   to_bit_interleaving(N0, U64BIG(*(u64*)npub));
     2574:	0704                	addi	s1,sp,896
-    2576:	0055                	c.nop	21
-    2578:	0000                	unimp
-    257a:	0102                	c.slli64	sp
-    257c:	8408                	0x8408
+    2576:	0000003f 6e080102 	0x6e0801020000003f
     257e:	0000                	unimp
     2580:	0400                	addi	s0,sp,512
-    2582:	000001b3          	add	gp,zero,zero
+    2582:	000001bb          	0x1bb
     2586:	8002                	0x8002
     2588:	00002c0f          	0x2c0f
     258c:	0400                	addi	s0,sp,512
-    258e:	01b2                	slli	gp,gp,0xc
+    258e:	01ba                	slli	gp,gp,0xe
     2590:	0000                	unimp
     2592:	8102                	jr	sp
     2594:	3316                	fld	ft6,352(sp)
     2596:	0000                	unimp
     2598:	0400                	addi	s0,sp,512
-    259a:	032e                	slli	t1,t1,0xb
+    259a:	0336                	slli	t1,t1,0xd
     259c:	0000                	unimp
     259e:	8402                	jr	s0
     25a0:	00003a0f          	0x3a0f
     25a4:	0200                	addi	s0,sp,256
     25a6:	0404                	addi	s1,sp,512
-    25a8:	0000028f          	0x28f
+    25a8:	00000297          	auipc	t0,0x0
     25ac:	0802                	c.slli64	a6
-    25ae:	00028703          	lb	a4,0(t0) # ffff0000 <_stack_start+0xfffd9df8>
+    25ae:	00028f03          	lb	t5,0(t0) # 25a8 <crypto_aead_decrypt+0x3cc>
     25b2:	0200                	addi	s0,sp,256
     25b4:	0408                	addi	a0,sp,512
-    25b6:	000001cf          	fnmadd.s	ft3,ft0,ft0,ft0,rne
+    25b6:	000001d7          	0x1d7
     25ba:	1002                	c.slli	zero,0x20
-    25bc:	0002e803          	0x2e803
+    25bc:	0002f003          	0x2f003
     25c0:	0200                	addi	s0,sp,256
     25c2:	0320                	addi	s0,sp,392
-    25c4:	01c2                	slli	gp,gp,0x10
+    25c4:	01ca                	slli	gp,gp,0x12
     25c6:	0000                	unimp
-    25c8:	a105                	j	29e8 <crypto_aead_decrypt+0x80c>
+    25c8:	a905                	j	29f8 <crypto_aead_decrypt+0x81c>
     25ca:	0001                	nop
     25cc:	0800                	addi	s0,sp,16
     25ce:	ed02                	fsw	ft0,152(sp)
@@ -9828,7 +9825,7 @@ Disassembly of section .debug_info:
     25de:	791a                	flw	fs2,164(sp)
     25e0:	0000                	unimp
     25e2:	0000                	unimp
-    25e4:	00039d07          	0x39d07
+    25e4:	0003a507          	flw	fa0,0(t2)
     25e8:	0200                	addi	s0,sp,256
     25ea:	01ed                	addi	gp,gp,27
     25ec:	791f 0000 0400      	0x4000000791f
@@ -9849,14 +9846,14 @@ Disassembly of section .debug_info:
     2610:	0091                	addi	ra,ra,4
     2612:	0000                	unimp
     2614:	0a00                	addi	s0,sp,272
-    2616:	01ba                	slli	gp,gp,0xe
+    2616:	01c2                	slli	gp,gp,0x10
     2618:	0000                	unimp
     261a:	f802                	fsw	ft0,48(sp)
     261c:	0301                	addi	t1,t1,0
     261e:	000000eb          	0xeb
     2622:	00010d0b          	0x10d0b
     2626:	0c00                	addi	s0,sp,528
-    2628:	00000143          	fmadd.s	ft2,ft0,ft0,ft0,rne
+    2628:	0000014b          	fnmsub.s	ft2,ft0,ft0,ft0,rne
     262c:	2901                	jal	2a3c <crypto_aead_decrypt+0x860>
     262e:	9101                	srli	a0,a0,0x20
     2630:	0000                	unimp
@@ -9894,7 +9891,7 @@ Disassembly of section .debug_info:
     2676:	0b2d                	addi	s6,s6,11
     2678:	010d                	addi	sp,sp,3
     267a:	0000                	unimp
-    267c:	8f10                	0x8f10
+    267c:	9710                	0x9710
     267e:	01000003          	lb	zero,16(zero) # 10 <__DYNAMIC+0x10>
     2682:	0a2e                	slli	s4,s4,0xb
     2684:	0085                	addi	ra,ra,1
@@ -9902,7 +9899,7 @@ Disassembly of section .debug_info:
   to_bit_interleaving(N1, U64BIG(*(u64*)(npub + 8)));
     2688:	b010                	fsd	fa2,32(s0)
     268a:	0000                	unimp
-    268c:	9510                	0x9510
+    268c:	9d10                	0x9d10
     268e:	01000003          	lb	zero,16(zero) # 10 <__DYNAMIC+0x10>
   to_bit_interleaving(K1, U64BIG(*(u64*)(k + 8)));
     2692:	00850a2f          	0x850a2f
@@ -9910,46 +9907,46 @@ Disassembly of section .debug_info:
     2696:	0000                	unimp
     2698:	b02e                	fsd	fa1,32(sp)
     269a:	0000                	unimp
-    269c:	4011                	c.li	zero,4
+    269c:	4811                	li	a6,4
     269e:	01000003          	lb	zero,16(zero) # 10 <__DYNAMIC+0x10>
     26a2:	0a30                	addi	a2,sp,280
     26a4:	0085                	addi	ra,ra,1
     26a6:	0000                	unimp
     26a8:	5f01                	li	t5,-32
-    26aa:	a610                	fsd	fa2,8(a2)
+    26aa:	ae10                	fsd	fa2,24(a2)
     26ac:	01000003          	lb	zero,16(zero) # 10 <__DYNAMIC+0x10>
     26b0:	0a31                	addi	s4,s4,12
     26b2:	0085                	addi	ra,ra,1
     26b4:	0000                	unimp
     26b6:	b04c                	fsd	fa1,160(s0)
     26b8:	0000                	unimp
-    26ba:	a210                	fsd	fa2,0(a2)
+    26ba:	aa10                	fsd	fa2,16(a2)
     26bc:	01000003          	lb	zero,16(zero) # 10 <__DYNAMIC+0x10>
     26c0:	0a32                	slli	s4,s4,0xc
     26c2:	0085                	addi	ra,ra,1
     26c4:	0000                	unimp
     26c6:	b081                	j	1f06 <ROUND+0x8e>
     26c8:	0000                	unimp
-    26ca:	9b10                	0x9b10
+    26ca:	a310                	fsd	fa2,0(a4)
     26cc:	01000003          	lb	zero,16(zero) # 10 <__DYNAMIC+0x10>
     26d0:	00850a33          	add	s4,a0,s0
     26d4:	0000                	unimp
     26d6:	b0a4                	fsd	fs1,96(s1)
     26d8:	0000                	unimp
-    26da:	3510                	fld	fa2,40(a0)
+    26da:	3d10                	fld	fa2,56(a0)
     26dc:	01000003          	lb	zero,16(zero) # 10 <__DYNAMIC+0x10>
     26e0:	0a34                	addi	a3,sp,280
     26e2:	0085                	addi	ra,ra,1
     26e4:	0000                	unimp
     26e6:	b0ce                	fsd	fs3,96(sp)
     26e8:	0000                	unimp
-    26ea:	4a11                	li	s4,4
+    26ea:	5211                	li	tp,-28
     26ec:	01000003          	lb	zero,16(zero) # 10 <__DYNAMIC+0x10>
     26f0:	0a35                	addi	s4,s4,13
     26f2:	0085                	addi	ra,ra,1
     26f4:	0000                	unimp
     26f6:	6d01                	0x6d01
-    26f8:	8910                	0x8910
+    26f8:	9110                	0x9110
     26fa:	01000003          	lb	zero,16(zero) # 10 <__DYNAMIC+0x10>
     26fe:	0a36                	slli	s4,s4,0xd
     2700:	0085                	addi	ra,ra,1
@@ -39038,375 +39035,378 @@ Disassembly of section .debug_str:
   34:	6300                	flw	fs0,0(a4)
   36:	656c                	flw	fa1,76(a0)
   38:	006e                	c.slli	zero,0x1b
-  3a:	6d6f682f          	0x6d6f682f
-  3e:	2f65                	jal	7f6 <crypto_aead_encrypt+0x76a>
-  40:	7579                	lui	a0,0xffffe
-  42:	756e                	flw	fa0,248(sp)
-  44:	75632f73          	csrrs	t5,0x756,t1
-  48:	745f7473          	csrrci	s0,0x745,30
-  4c:	7365                	lui	t1,0xffff9
-  4e:	0074                	addi	a3,sp,12
-  50:	6f6c                	flw	fa1,92(a4)
-  52:	676e                	flw	fa4,216(sp)
-  54:	6c20                	flw	fs0,88(s0)
-  56:	20676e6f          	jal	t3,7625c <_stack_start+0x60054>
-  5a:	6e75                	lui	t3,0x1d
-  5c:	6e676973          	csrrsi	s2,0x6e6,14
-  60:	6465                	lui	s0,0x19
-  62:	6920                	flw	fs0,80(a0)
-  64:	746e                	flw	fs0,248(sp)
-  66:	6300                	flw	fs0,0(a4)
-  68:	7972                	flw	fs2,60(sp)
-  6a:	7470                	flw	fa2,108(s0)
-  6c:	65615f6f          	jal	t5,156c2 <_stack+0x14ba>
-  70:	6461                	lui	s0,0x18
-  72:	645f 6365 7972      	0x79726365645f
-  78:	7470                	flw	fa2,108(s0)
-  7a:	7500                	flw	fs0,40(a0)
+  3a:	6f6c                	flw	fa1,92(a4)
+  3c:	676e                	flw	fa4,216(sp)
+  3e:	6c20                	flw	fs0,88(s0)
+  40:	20676e6f          	jal	t3,76246 <_stack_start+0x6003e>
+  44:	6e75                	lui	t3,0x1d
+  46:	6e676973          	csrrsi	s2,0x6e6,14
+  4a:	6465                	lui	s0,0x19
+  4c:	6920                	flw	fs0,80(a0)
+  4e:	746e                	flw	fs0,248(sp)
+  50:	6300                	flw	fs0,0(a4)
+  52:	7972                	flw	fs2,60(sp)
+  54:	7470                	flw	fa2,108(s0)
+  56:	65615f6f          	jal	t5,156ac <_stack+0x14a4>
+  5a:	6461                	lui	s0,0x18
+  5c:	645f 6365 7972      	0x79726365645f
+  62:	7470                	flw	fa2,108(s0)
+  64:	7500                	flw	fs0,40(a0)
+  66:	736e                	flw	ft6,248(sp)
+  68:	6769                	lui	a4,0x1a
+  6a:	656e                	flw	fa0,216(sp)
+  6c:	2064                	fld	fs1,192(s0)
+  6e:	72616863          	bltu	sp,t1,79e <crypto_aead_encrypt+0x712>
+  72:	2f00                	fld	fs0,24(a4)
+  74:	6f68                	flw	fa0,92(a4)
+  76:	656d                	lui	a0,0x1b
+  78:	6e75792f          	0x6e75792f
   jal x0, default_exc_handler
-  7c:	736e                	flw	ft6,248(sp)
-  7e:	6769                	lui	a4,0x1a
+  7c:	7375                	lui	t1,0xffffd
+  7e:	6e65732f          	0x6e65732f
   jal x0, reset_handler
-  80:	656e                	flw	fa0,216(sp)
-  82:	2064                	fld	fs1,192(s0)
+  82:	6f69                	lui	t5,0x1a
   jal x0, default_exc_handler
-  84:	72616863          	bltu	sp,t1,7b4 <crypto_aead_encrypt+0x728>
+  84:	5f72                	lw	t5,60(sp)
+  86:	7270                	flw	fa2,100(a2)
   jal x0, default_exc_handler
-  88:	7200                	flw	fs0,32(a2)
-  8a:	7365                	lui	t1,0xffff9
+  88:	63656a6f          	jal	s4,566be <_stack_start+0x404b6>
                         const unsigned char* k) {
-  8c:	6c75                	lui	s8,0x1d
-  8e:	0074                	addi	a3,sp,12
-  90:	726f6873          	csrrsi	a6,0x726,30
-  94:	2074                	fld	fa3,192(s0)
-  96:	6e69                	lui	t3,0x1a
+  8c:	2f74                	fld	fa3,216(a4)
+  8e:	72007773          	csrrci	a4,0x720,0
+  92:	7365                	lui	t1,0xffff9
+  94:	6c75                	lui	s8,0x1d
+  96:	0074                	addi	a3,sp,12
   *clen = mlen + CRYPTO_ABYTES;
-  98:	0074                	addi	a3,sp,12
-  9a:	6c6d                	lui	s8,0x1b
+  98:	726f6873          	csrrsi	a6,0x726,30
                         const unsigned char* k) {
-  9c:	6e65                	lui	t3,0x19
-  9e:	7300                	flw	fs0,32(a4)
-  a0:	6f68                	flw	fa0,92(a4)
-  a2:	7472                	flw	fs0,60(sp)
+  9c:	2074                	fld	fa3,192(s0)
+  9e:	6e69                	lui	t3,0x1a
+  a0:	0074                	addi	a3,sp,12
+  a2:	6c6d                	lui	s8,0x1b
   *clen = mlen + CRYPTO_ABYTES;
-  a4:	7520                	flw	fs0,104(a0)
-  a6:	736e                	flw	ft6,248(sp)
+  a4:	6e65                	lui	t3,0x19
+  a6:	7300                	flw	fs0,32(a4)
                         const unsigned char* k) {
-  a8:	6769                	lui	a4,0x1a
-  aa:	656e                	flw	fa0,216(sp)
-  ac:	2064                	fld	fs1,192(s0)
-  ae:	6e69                	lui	t3,0x1a
-  b0:	0074                	addi	a3,sp,12
-  b2:	20554e47          	fmsub.s	ft8,fa0,ft5,ft4,rmm
-  b6:	20373143          	fmadd.s	ft2,fa4,ft3,ft4,rup
-  ba:	3031                	jal	fffff8c6 <_stack_start+0xfffe96be>
-  bc:	322e                	fld	ft4,232(sp)
-  be:	302e                	fld	ft0,232(sp)
-  c0:	2d20                	fld	fs0,88(a0)
-  c2:	616d                	addi	sp,sp,240
-  c4:	6372                	flw	ft6,28(sp)
-  c6:	3d68                	fld	fa0,248(a0)
-  c8:	7672                	flw	fa2,60(sp)
-  ca:	20693233          	0x20693233
-  ce:	6d2d                	lui	s10,0xb
-  d0:	6261                	lui	tp,0x18
-  d2:	3d69                	jal	ffffff6c <_stack_start+0xfffe9d64>
-  d4:	6c69                	lui	s8,0x1a
-  d6:	3370                	fld	fa2,224(a4)
+  a8:	6f68                	flw	fa0,92(a4)
+  aa:	7472                	flw	fs0,60(sp)
+  ac:	7520                	flw	fs0,104(a0)
+  ae:	736e                	flw	ft6,248(sp)
+  b0:	6769                	lui	a4,0x1a
+  b2:	656e                	flw	fa0,216(sp)
+  b4:	2064                	fld	fs1,192(s0)
+  b6:	6e69                	lui	t3,0x1a
+  b8:	0074                	addi	a3,sp,12
+  ba:	20554e47          	fmsub.s	ft8,fa0,ft5,ft4,rmm
+  be:	20373143          	fmadd.s	ft2,fa4,ft3,ft4,rup
+  c2:	3031                	jal	fffff8ce <_stack_start+0xfffe96c6>
+  c4:	322e                	fld	ft4,232(sp)
+  c6:	302e                	fld	ft0,232(sp)
+  c8:	2d20                	fld	fs0,88(a0)
+  ca:	616d                	addi	sp,sp,240
+  cc:	6372                	flw	ft6,28(sp)
+  ce:	3d68                	fld	fa0,248(a0)
+  d0:	7672                	flw	fa2,60(sp)
+  d2:	20693233          	0x20693233
+  d6:	6d2d                	lui	s10,0xb
   *clen = mlen + CRYPTO_ABYTES;
-  d8:	2032                	fld	ft0,264(sp)
-  da:	6d2d                	lui	s10,0xb
-  dc:	646f6d63          	bltu	t5,t1,736 <crypto_aead_encrypt+0x6aa>
-  e0:	6c65                	lui	s8,0x19
-  e2:	6d3d                	lui	s10,0xf
+  d8:	6261                	lui	tp,0x18
+  da:	3d69                	jal	ffffff74 <_stack_start+0xfffe9d6c>
+  dc:	6c69                	lui	s8,0x1a
+  de:	3370                	fld	fa2,224(a4)
+  e0:	2032                	fld	ft0,264(sp)
+  e2:	6d2d                	lui	s10,0xb
                         const unsigned char* k) {
-  e4:	6465                	lui	s0,0x19
-  e6:	6e61                	lui	t3,0x18
-  e8:	2079                	jal	176 <crypto_aead_encrypt+0xea>
-  ea:	6d2d                	lui	s10,0xb
+  e4:	646f6d63          	bltu	t5,t1,73e <crypto_aead_encrypt+0x6b2>
+  e8:	6c65                	lui	s8,0x19
+  ea:	6d3d                	lui	s10,0xf
   to_bit_interleaving(K0, U64BIG(*(u64*)k));
-  ec:	7574                	flw	fa3,108(a0)
-  ee:	656e                	flw	fa0,216(sp)
-  f0:	723d                	lui	tp,0xfffef
-  f2:	656b636f          	jal	t1,b6748 <_stack_start+0xa0540>
+  ec:	6465                	lui	s0,0x19
+  ee:	6e61                	lui	t3,0x18
+  f0:	2079                	jal	17e <crypto_aead_encrypt+0xf2>
+  f2:	6d2d                	lui	s10,0xb
                         const unsigned char* k) {
-  f6:	2074                	fld	fa3,192(s0)
+  f4:	7574                	flw	fa3,108(a0)
+  f6:	656e                	flw	fa0,216(sp)
   to_bit_interleaving(K0, U64BIG(*(u64*)k));
-  f8:	6d2d                	lui	s10,0xb
-  fa:	7261                	lui	tp,0xffff8
-  fc:	723d6863          	bltu	s10,gp,82c <crypto_aead_encrypt+0x7a0>
- 100:	3376                	fld	ft6,376(sp)
- 102:	6932                	flw	fs2,12(sp)
- 104:	2d20                	fld	fs0,88(a0)
- 106:	4f2d2067          	0x4f2d2067
- 10a:	662d2073          	csrs	0x662,s10
- 10e:	6976                	flw	fs2,92(sp)
- 110:	69626973          	csrrsi	s2,0x696,4
+  f8:	723d                	lui	tp,0xfffef
+  fa:	656b636f          	jal	t1,b6750 <_stack_start+0xa0548>
+  fe:	2074                	fld	fa3,192(s0)
+ 100:	6d2d                	lui	s10,0xb
+ 102:	7261                	lui	tp,0xffff8
+ 104:	723d6863          	bltu	s10,gp,834 <crypto_aead_encrypt+0x7a8>
+ 108:	3376                	fld	ft6,376(sp)
+ 10a:	6932                	flw	fs2,12(sp)
+ 10c:	2d20                	fld	fs0,88(a0)
+ 10e:	4f2d2067          	0x4f2d2067
+ 112:	662d2073          	csrs	0x662,s10
                         const unsigned char* k) {
- 114:	696c                	flw	fa1,84(a0)
- 116:	7974                	flw	fa3,116(a0)
+ 116:	6976                	flw	fs2,92(sp)
   to_bit_interleaving(K0, U64BIG(*(u64*)k));
- 118:	683d                	lui	a6,0xf
- 11a:	6469                	lui	s0,0x1a
- 11c:	6564                	flw	fs1,76(a0)
- 11e:	006e                	c.slli	zero,0x1b
- 120:	70797263          	bgeu	s2,t2,824 <crypto_aead_encrypt+0x798>
- 124:	6f74                	flw	fa3,92(a4)
- 126:	615f 6165 5f64      	0x5f646165615f
- 12c:	6e65                	lui	t3,0x19
- 12e:	70797263          	bgeu	s2,t2,832 <crypto_aead_encrypt+0x7a6>
- 132:	0074                	addi	a3,sp,12
- 134:	706e                	flw	ft0,248(sp)
- 136:	6275                	lui	tp,0x1d
- 138:	7400                	flw	fs0,40(s0)
- 13a:	706d                	c.lui	zero,0xffffb
- 13c:	0030                	addi	a2,sp,8
- 13e:	6d74                	flw	fa3,92(a0)
- 140:	3170                	fld	fa2,224(a0)
- 142:	5f00                	lw	s0,56(a4)
- 144:	6d5f 6c75 6964      	0x69646c756d5f
- 14a:	64610033          	0x64610033
- 14e:	656c                	flw	fa1,76(a0)
- 150:	006e                	c.slli	zero,0x1b
- 152:	6e65                	lui	t3,0x19
- 154:	70797263          	bgeu	s2,t2,858 <crypto_aead_encrypt+0x7cc>
- 158:	2e74                	fld	fa3,216(a2)
- 15a:	5f5f0063          	beq	t5,s5,73a <crypto_aead_encrypt+0x6ae>
- 15e:	736c                	flw	fa1,100(a4)
- 160:	7268                	flw	fa0,100(a2)
- 162:	6964                	flw	fs1,84(a0)
- 164:	4f520033          	0x4f520033
- 168:	4e55                	li	t3,21
- 16a:	0044                	addi	s1,sp,4
- 16c:	5f5f 7361 6c68      	0x6c6873615f5f
- 172:	6964                	flw	fs1,84(a0)
- 174:	33750033          	0x33750033
- 178:	5f32                	lw	t5,44(sp)
- 17a:	0032                	c.slli	zero,0xc
- 17c:	6f72                	flw	ft10,28(sp)
- 17e:	6e75                	lui	t3,0x1d
- 180:	2e64                	fld	fs1,216(a2)
- 182:	65640063          	beq	s0,s6,7c2 <crypto_aead_encrypt+0x736>
- 186:	70797263          	bgeu	s2,t2,88a <crypto_aead_encrypt+0x7fe>
- 18a:	2e74                	fld	fa3,216(a2)
- 18c:	72630063          	beq	t1,t1,8ac <crypto_aead_encrypt+0x820>
- 190:	3074                	fld	fa3,224(s0)
- 192:	532e                	lw	t1,232(sp)
- 194:	4700                	lw	s0,8(a4)
- 196:	554e                	lw	a0,240(sp)
- 198:	4120                	lw	s0,64(a0)
- 19a:	2e322053          	0x2e322053
- 19e:	44003533          	0x44003533
- 1a2:	72747357          	0x72747357
- 1a6:	6375                	lui	t1,0x1d
- 1a8:	0074                	addi	a3,sp,12
- 1aa:	72726163          	bltu	tp,t2,8cc <crypto_aead_encrypt+0x840>
- 1ae:	6569                	lui	a0,0x1a
- 1b0:	53550073          	0x53550073
- 1b4:	7449                	lui	s0,0xffff2
- 1b6:	7079                	c.lui	zero,0xffffe
- 1b8:	0065                	c.nop	25
- 1ba:	5744                	lw	s1,44(a4)
- 1bc:	6e75                	lui	t3,0x1d
- 1be:	6f69                	lui	t5,0x1a
- 1c0:	006e                	c.slli	zero,0x1b
- 1c2:	706d6f63          	bltu	s10,t1,8e0 <crypto_aead_encrypt+0x854>
- 1c6:	656c                	flw	fa1,76(a0)
- 1c8:	2078                	fld	fa4,192(s0)
- 1ca:	6f6c                	flw	fa1,92(a4)
- 1cc:	676e                	flw	fa4,216(sp)
- 1ce:	6420                	flw	fs0,72(s0)
- 1d0:	6c62756f          	jal	a0,27896 <_stack_start+0x1168e>
- 1d4:	0065                	c.nop	25
- 1d6:	20554e47          	fmsub.s	ft8,fa0,ft5,ft4,rmm
- 1da:	20373143          	fmadd.s	ft2,fa4,ft3,ft4,rup
- 1de:	3031                	jal	fffff9ea <_stack_start+0xfffe97e2>
- 1e0:	322e                	fld	ft4,232(sp)
- 1e2:	302e                	fld	ft0,232(sp)
- 1e4:	2d20                	fld	fs0,88(a0)
- 1e6:	636d                	lui	t1,0x1b
- 1e8:	6f6d                	lui	t5,0x1b
- 1ea:	6564                	flw	fs1,76(a0)
- 1ec:	3d6c                	fld	fa1,248(a0)
- 1ee:	656d                	lui	a0,0x1b
- 1f0:	6c64                	flw	fs1,92(s0)
- 1f2:	2d20776f          	jal	a4,74c4 <_bss_end+0x3254>
- 1f6:	636d                	lui	t1,0x1b
- 1f8:	6f6d                	lui	t5,0x1b
- 1fa:	6564                	flw	fs1,76(a0)
- 1fc:	3d6c                	fld	fa1,248(a0)
- 1fe:	656d                	lui	a0,0x1b
- 200:	6c64                	flw	fs1,92(s0)
- 202:	2d20776f          	jal	a4,74d4 <_bss_end+0x3264>
- 206:	746d                	lui	s0,0xffffb
- 208:	6e75                	lui	t3,0x1d
- 20a:	3d65                	jal	c2 <crypto_aead_encrypt+0x36>
- 20c:	6f72                	flw	ft10,28(sp)
- 20e:	74656b63          	bltu	a0,t1,964 <crypto_aead_encrypt+0x8d8>
- 212:	2d20                	fld	fs0,88(a0)
- 214:	616d                	addi	sp,sp,240
- 216:	6372                	flw	ft6,28(sp)
- 218:	3d68                	fld	fa0,248(a0)
- 21a:	7672                	flw	fa2,60(sp)
- 21c:	6d693233          	0x6d693233
- 220:	6d2d2063          	0x6d2d2063
- 224:	6261                	lui	tp,0x18
- 226:	3d69                	jal	c0 <crypto_aead_encrypt+0x34>
- 228:	6c69                	lui	s8,0x1a
- 22a:	3370                	fld	fa2,224(a4)
- 22c:	2032                	fld	ft0,264(sp)
- 22e:	6d2d                	lui	s10,0xb
- 230:	7261                	lui	tp,0xffff8
- 232:	723d6863          	bltu	s10,gp,962 <crypto_aead_encrypt+0x8d6>
- 236:	3376                	fld	ft6,376(sp)
+ 118:	69626973          	csrrsi	s2,0x696,4
+ 11c:	696c                	flw	fa1,84(a0)
+ 11e:	7974                	flw	fa3,116(a0)
+ 120:	683d                	lui	a6,0xf
+ 122:	6469                	lui	s0,0x1a
+ 124:	6564                	flw	fs1,76(a0)
+ 126:	006e                	c.slli	zero,0x1b
+ 128:	70797263          	bgeu	s2,t2,82c <crypto_aead_encrypt+0x7a0>
+ 12c:	6f74                	flw	fa3,92(a4)
+ 12e:	615f 6165 5f64      	0x5f646165615f
+ 134:	6e65                	lui	t3,0x19
+ 136:	70797263          	bgeu	s2,t2,83a <crypto_aead_encrypt+0x7ae>
+ 13a:	0074                	addi	a3,sp,12
+ 13c:	706e                	flw	ft0,248(sp)
+ 13e:	6275                	lui	tp,0x1d
+ 140:	7400                	flw	fs0,40(s0)
+ 142:	706d                	c.lui	zero,0xffffb
+ 144:	0030                	addi	a2,sp,8
+ 146:	6d74                	flw	fa3,92(a0)
+ 148:	3170                	fld	fa2,224(a0)
+ 14a:	5f00                	lw	s0,56(a4)
+ 14c:	6d5f 6c75 6964      	0x69646c756d5f
+ 152:	64610033          	0x64610033
+ 156:	656c                	flw	fa1,76(a0)
+ 158:	006e                	c.slli	zero,0x1b
+ 15a:	6e65                	lui	t3,0x19
+ 15c:	70797263          	bgeu	s2,t2,860 <crypto_aead_encrypt+0x7d4>
+ 160:	2e74                	fld	fa3,216(a2)
+ 162:	5f5f0063          	beq	t5,s5,742 <crypto_aead_encrypt+0x6b6>
+ 166:	736c                	flw	fa1,100(a4)
+ 168:	7268                	flw	fa0,100(a2)
+ 16a:	6964                	flw	fs1,84(a0)
+ 16c:	4f520033          	0x4f520033
+ 170:	4e55                	li	t3,21
+ 172:	0044                	addi	s1,sp,4
+ 174:	5f5f 7361 6c68      	0x6c6873615f5f
+ 17a:	6964                	flw	fs1,84(a0)
+ 17c:	33750033          	0x33750033
+ 180:	5f32                	lw	t5,44(sp)
+ 182:	0032                	c.slli	zero,0xc
+ 184:	6f72                	flw	ft10,28(sp)
+ 186:	6e75                	lui	t3,0x1d
+ 188:	2e64                	fld	fs1,216(a2)
+ 18a:	65640063          	beq	s0,s6,7ca <crypto_aead_encrypt+0x73e>
+ 18e:	70797263          	bgeu	s2,t2,892 <crypto_aead_encrypt+0x806>
+ 192:	2e74                	fld	fa3,216(a2)
+ 194:	72630063          	beq	t1,t1,8b4 <crypto_aead_encrypt+0x828>
+ 198:	3074                	fld	fa3,224(s0)
+ 19a:	532e                	lw	t1,232(sp)
+ 19c:	4700                	lw	s0,8(a4)
+ 19e:	554e                	lw	a0,240(sp)
+ 1a0:	4120                	lw	s0,64(a0)
+ 1a2:	2e322053          	0x2e322053
+ 1a6:	44003533          	0x44003533
+ 1aa:	72747357          	0x72747357
+ 1ae:	6375                	lui	t1,0x1d
+ 1b0:	0074                	addi	a3,sp,12
+ 1b2:	72726163          	bltu	tp,t2,8d4 <crypto_aead_encrypt+0x848>
+ 1b6:	6569                	lui	a0,0x1a
+ 1b8:	53550073          	0x53550073
+ 1bc:	7449                	lui	s0,0xffff2
+ 1be:	7079                	c.lui	zero,0xffffe
+ 1c0:	0065                	c.nop	25
+ 1c2:	5744                	lw	s1,44(a4)
+ 1c4:	6e75                	lui	t3,0x1d
+ 1c6:	6f69                	lui	t5,0x1a
+ 1c8:	006e                	c.slli	zero,0x1b
+ 1ca:	706d6f63          	bltu	s10,t1,8e8 <crypto_aead_encrypt+0x85c>
+ 1ce:	656c                	flw	fa1,76(a0)
+ 1d0:	2078                	fld	fa4,192(s0)
+ 1d2:	6f6c                	flw	fa1,92(a4)
+ 1d4:	676e                	flw	fa4,216(sp)
+ 1d6:	6420                	flw	fs0,72(s0)
+ 1d8:	6c62756f          	jal	a0,2789e <_stack_start+0x11696>
+ 1dc:	0065                	c.nop	25
+ 1de:	20554e47          	fmsub.s	ft8,fa0,ft5,ft4,rmm
+ 1e2:	20373143          	fmadd.s	ft2,fa4,ft3,ft4,rup
+ 1e6:	3031                	jal	fffff9f2 <_stack_start+0xfffe97ea>
+ 1e8:	322e                	fld	ft4,232(sp)
+ 1ea:	302e                	fld	ft0,232(sp)
+ 1ec:	2d20                	fld	fs0,88(a0)
+ 1ee:	636d                	lui	t1,0x1b
+ 1f0:	6f6d                	lui	t5,0x1b
+ 1f2:	6564                	flw	fs1,76(a0)
+ 1f4:	3d6c                	fld	fa1,248(a0)
+ 1f6:	656d                	lui	a0,0x1b
+ 1f8:	6c64                	flw	fs1,92(s0)
+ 1fa:	2d20776f          	jal	a4,74cc <_bss_end+0x325c>
+ 1fe:	636d                	lui	t1,0x1b
+ 200:	6f6d                	lui	t5,0x1b
+ 202:	6564                	flw	fs1,76(a0)
+ 204:	3d6c                	fld	fa1,248(a0)
+ 206:	656d                	lui	a0,0x1b
+ 208:	6c64                	flw	fs1,92(s0)
+ 20a:	2d20776f          	jal	a4,74dc <_bss_end+0x326c>
+ 20e:	746d                	lui	s0,0xffffb
+ 210:	6e75                	lui	t3,0x1d
+ 212:	3d65                	jal	ca <crypto_aead_encrypt+0x3e>
+ 214:	6f72                	flw	ft10,28(sp)
+ 216:	74656b63          	bltu	a0,t1,96c <crypto_aead_encrypt+0x8e0>
+ 21a:	2d20                	fld	fs0,88(a0)
+ 21c:	616d                	addi	sp,sp,240
+ 21e:	6372                	flw	ft6,28(sp)
+ 220:	3d68                	fld	fa0,248(a0)
+ 222:	7672                	flw	fa2,60(sp)
+ 224:	6d693233          	0x6d693233
+ 228:	6d2d2063          	0x6d2d2063
+ 22c:	6261                	lui	tp,0x18
+ 22e:	3d69                	jal	c8 <crypto_aead_encrypt+0x3c>
+ 230:	6c69                	lui	s8,0x1a
+ 232:	3370                	fld	fa2,224(a4)
+ 234:	2032                	fld	ft0,264(sp)
+ 236:	6d2d                	lui	s10,0xb
   to_bit_interleaving(K1, U64BIG(*(u64*)(k + 8)));
- 238:	6932                	flw	fs2,12(sp)
- 23a:	636d                	lui	t1,0x1b
- 23c:	2d20                	fld	fs0,88(a0)
- 23e:	4f2d2067          	0x4f2d2067
+ 238:	7261                	lui	tp,0xffff8
+ 23a:	723d6863          	bltu	s10,gp,96a <crypto_aead_encrypt+0x8de>
+ 23e:	3376                	fld	ft6,376(sp)
   to_bit_interleaving(K0, U64BIG(*(u64*)k));
- 242:	4f2d2073          	csrs	0x4f2,s10
- 246:	2032                	fld	ft0,264(sp)
- 248:	4f2d                	li	t5,11
- 24a:	662d2073          	csrs	0x662,s10
- 24e:	7562                	flw	fa0,56(sp)
- 250:	6c69                	lui	s8,0x1a
- 252:	6964                	flw	fs1,84(a0)
- 254:	676e                	flw	fa4,216(sp)
- 256:	6c2d                	lui	s8,0xb
- 258:	6269                	lui	tp,0x1a
- 25a:	20636367          	0x20636367
- 25e:	662d                	lui	a2,0xb
+ 240:	6932                	flw	fs2,12(sp)
+ 242:	636d                	lui	t1,0x1b
+ 244:	2d20                	fld	fs0,88(a0)
+ 246:	4f2d2067          	0x4f2d2067
+ 24a:	4f2d2073          	csrs	0x4f2,s10
+ 24e:	2032                	fld	ft0,264(sp)
+ 250:	4f2d                	li	t5,11
+ 252:	662d2073          	csrs	0x662,s10
+ 256:	7562                	flw	fa0,56(sp)
+ 258:	6c69                	lui	s8,0x1a
+ 25a:	6964                	flw	fs1,84(a0)
+ 25c:	676e                	flw	fa4,216(sp)
+ 25e:	6c2d                	lui	s8,0xb
   to_bit_interleaving(K1, U64BIG(*(u64*)(k + 8)));
- 260:	6f6e                	flw	ft10,216(sp)
- 262:	732d                	lui	t1,0xfffeb
- 264:	6174                	flw	fa3,68(a0)
- 266:	702d6b63          	bltu	s10,sp,97c <crypto_aead_encrypt+0x8f0>
+ 260:	6269                	lui	tp,0x1a
+ 262:	20636367          	0x20636367
+ 266:	662d                	lui	a2,0xb
   to_bit_interleaving(K0, U64BIG(*(u64*)k));
- 26a:	6f72                	flw	ft10,28(sp)
+ 268:	6f6e                	flw	ft10,216(sp)
+ 26a:	732d                	lui	t1,0xfffeb
   to_bit_interleaving(K1, U64BIG(*(u64*)(k + 8)));
- 26c:	6574                	flw	fa3,76(a0)
- 26e:	726f7463          	bgeu	t5,t1,996 <crypto_aead_encrypt+0x90a>
- 272:	2d20                	fld	fs0,88(a0)
- 274:	7666                	flw	fa2,120(sp)
- 276:	7369                	lui	t1,0xffffa
- 278:	6269                	lui	tp,0x1a
- 27a:	6c69                	lui	s8,0x1a
- 27c:	7469                	lui	s0,0xffffa
- 27e:	3d79                	jal	11c <crypto_aead_encrypt+0x90>
- 280:	6968                	flw	fa0,84(a0)
- 282:	6464                	flw	fs1,76(s0)
- 284:	6e65                	lui	t3,0x19
- 286:	6300                	flw	fs0,0(a4)
- 288:	6c706d6f          	jal	s10,714e <_bss_end+0x2ede>
- 28c:	7865                	lui	a6,0xffff9
- 28e:	6620                	flw	fs0,72(a2)
- 290:	6f6c                	flw	fa1,92(a4)
- 292:	7461                	lui	s0,0xffff8
- 294:	2f00                	fld	fs0,24(a4)
- 296:	6f68                	flw	fa0,92(a4)
- 298:	656d                	lui	a0,0x1b
- 29a:	6e75792f          	0x6e75792f
- 29e:	7375                	lui	t1,0xffffd
- 2a0:	7369722f          	0x7369722f
- 2a4:	672d7663          	bgeu	s10,s2,910 <crypto_aead_encrypt+0x884>
- 2a8:	756e                	flw	fa0,248(sp)
- 2aa:	742d                	lui	s0,0xfffeb
- 2ac:	636c6f6f          	jal	t5,c68e2 <_stack_start+0xb06da>
- 2b0:	6168                	flw	fa0,68(a0)
- 2b2:	6e69                	lui	t3,0x1a
- 2b4:	6975622f          	0x6975622f
- 2b8:	646c                	flw	fa1,76(s0)
- 2ba:	672d                	lui	a4,0xb
- 2bc:	6e2d6363          	bltu	s10,sp,9a2 <crypto_aead_encrypt+0x916>
- 2c0:	7765                	lui	a4,0xffff9
- 2c2:	696c                	flw	fa1,84(a0)
- 2c4:	2d62                	fld	fs10,24(sp)
- 2c6:	67617473          	csrrci	s0,0x676,2
- 2ca:	3265                	jal	fffffc72 <_stack_start+0xfffe9a6a>
- 2cc:	7369722f          	0x7369722f
- 2d0:	32337663          	bgeu	t1,gp,5fc <crypto_aead_encrypt+0x570>
- 2d4:	752d                	lui	a0,0xfffeb
- 2d6:	6b6e                	flw	fs6,216(sp)
- 2d8:	6f6e                	flw	ft10,216(sp)
- 2da:	652d6e77          	0x652d6e77
- 2de:	666c                	flw	fa1,76(a2)
- 2e0:	62696c2f          	0x62696c2f
- 2e4:	00636367          	0x636367
- 2e8:	706d6f63          	bltu	s10,t1,a06 <crypto_aead_encrypt+0x97a>
- 2ec:	656c                	flw	fa1,76(a0)
- 2ee:	2078                	fld	fa4,192(s0)
- 2f0:	6f64                	flw	fs1,92(a4)
- 2f2:	6275                	lui	tp,0x1d
+ 26c:	6174                	flw	fa3,68(a0)
+ 26e:	702d6b63          	bltu	s10,sp,984 <crypto_aead_encrypt+0x8f8>
+ 272:	6f72                	flw	ft10,28(sp)
+ 274:	6574                	flw	fa3,76(a0)
+ 276:	726f7463          	bgeu	t5,t1,99e <crypto_aead_encrypt+0x912>
+ 27a:	2d20                	fld	fs0,88(a0)
+ 27c:	7666                	flw	fa2,120(sp)
+ 27e:	7369                	lui	t1,0xffffa
+ 280:	6269                	lui	tp,0x1a
+ 282:	6c69                	lui	s8,0x1a
+ 284:	7469                	lui	s0,0xffffa
+ 286:	3d79                	jal	124 <crypto_aead_encrypt+0x98>
+ 288:	6968                	flw	fa0,84(a0)
+ 28a:	6464                	flw	fs1,76(s0)
+ 28c:	6e65                	lui	t3,0x19
+ 28e:	6300                	flw	fs0,0(a4)
+ 290:	6c706d6f          	jal	s10,7156 <_bss_end+0x2ee6>
+ 294:	7865                	lui	a6,0xffff9
+ 296:	6620                	flw	fs0,72(a2)
+ 298:	6f6c                	flw	fa1,92(a4)
+ 29a:	7461                	lui	s0,0xffff8
+ 29c:	2f00                	fld	fs0,24(a4)
+ 29e:	6f68                	flw	fa0,92(a4)
+ 2a0:	656d                	lui	a0,0x1b
+ 2a2:	6e75792f          	0x6e75792f
+ 2a6:	7375                	lui	t1,0xffffd
+ 2a8:	7369722f          	0x7369722f
+ 2ac:	672d7663          	bgeu	s10,s2,918 <crypto_aead_encrypt+0x88c>
+ 2b0:	756e                	flw	fa0,248(sp)
+ 2b2:	742d                	lui	s0,0xfffeb
+ 2b4:	636c6f6f          	jal	t5,c68ea <_stack_start+0xb06e2>
+ 2b8:	6168                	flw	fa0,68(a0)
+ 2ba:	6e69                	lui	t3,0x1a
+ 2bc:	6975622f          	0x6975622f
+ 2c0:	646c                	flw	fa1,76(s0)
+ 2c2:	672d                	lui	a4,0xb
+ 2c4:	6e2d6363          	bltu	s10,sp,9aa <crypto_aead_encrypt+0x91e>
+ 2c8:	7765                	lui	a4,0xffff9
+ 2ca:	696c                	flw	fa1,84(a0)
+ 2cc:	2d62                	fld	fs10,24(sp)
+ 2ce:	67617473          	csrrci	s0,0x676,2
+ 2d2:	3265                	jal	fffffc7a <_stack_start+0xfffe9a72>
+ 2d4:	7369722f          	0x7369722f
+ 2d8:	32337663          	bgeu	t1,gp,604 <crypto_aead_encrypt+0x578>
+ 2dc:	752d                	lui	a0,0xfffeb
+ 2de:	6b6e                	flw	fs6,216(sp)
+ 2e0:	6f6e                	flw	ft10,216(sp)
+ 2e2:	652d6e77          	0x652d6e77
+ 2e6:	666c                	flw	fa1,76(a2)
+ 2e8:	62696c2f          	0x62696c2f
+ 2ec:	00636367          	0x636367
+ 2f0:	706d6f63          	bltu	s10,t1,a0e <crypto_aead_encrypt+0x982>
  2f4:	656c                	flw	fa1,76(a0)
- 2f6:	2e00                	fld	fs0,24(a2)
- 2f8:	2f2e                	fld	ft10,200(sp)
- 2fa:	2e2e                	fld	ft8,200(sp)
- 2fc:	2f2e2e2f          	0x2f2e2e2f
+ 2f6:	2078                	fld	fa4,192(s0)
+ 2f8:	6f64                	flw	fs1,92(a4)
+ 2fa:	6275                	lui	tp,0x1d
+ 2fc:	656c                	flw	fa1,76(a0)
+ 2fe:	2e00                	fld	fs0,24(a2)
  300:	2f2e                	fld	ft10,200(sp)
- 302:	6972                	flw	fs2,28(sp)
- 304:	2d766373          	csrrsi	t1,0x2d7,12
- 308:	2f636367          	0x2f636367
- 30c:	696c                	flw	fa1,84(a0)
- 30e:	6762                	flw	fa4,24(sp)
- 310:	6c2f6363          	bltu	t5,sp,9d6 <crypto_aead_encrypt+0x94a>
- 314:	6269                	lui	tp,0x1a
- 316:	32636367          	0x32636367
- 31a:	632e                	flw	ft6,200(sp)
- 31c:	7300                	flw	fs0,32(a4)
- 31e:	6968                	flw	fa0,84(a0)
- 320:	7466                	flw	fs0,120(sp)
- 322:	635f 756f 746e      	0x746e756f635f
- 328:	745f 7079 0065      	0x657079745f
- 32e:	4944                	lw	s1,20(a0)
- 330:	7974                	flw	fa3,116(a0)
- 332:	6570                	flw	fa2,76(a0)
- 334:	7700                	flw	fs0,40(a4)
- 336:	685f 6769 5f68      	0x5f686769685f
- 33c:	6d74                	flw	fa3,92(a0)
- 33e:	0070                	addi	a2,sp,12
- 340:	5f75                	li	t5,-3
- 342:	6f6c                	flw	fa1,92(a4)
- 344:	736d5f77          	0x736d5f77
- 348:	0062                	c.slli	zero,0x18
- 34a:	69685f77          	0x69685f77
- 34e:	745f6867          	0x745f6867
- 352:	706d                	c.lui	zero,0xffffb
- 354:	7832                	flw	fa6,44(sp)
- 356:	2e00                	fld	fs0,24(a2)
- 358:	2f2e                	fld	ft10,200(sp)
- 35a:	2e2e                	fld	ft8,200(sp)
- 35c:	2f2e2e2f          	0x2f2e2e2f
+ 302:	2e2e                	fld	ft8,200(sp)
+ 304:	2f2e2e2f          	0x2f2e2e2f
+ 308:	2f2e                	fld	ft10,200(sp)
+ 30a:	6972                	flw	fs2,28(sp)
+ 30c:	2d766373          	csrrsi	t1,0x2d7,12
+ 310:	2f636367          	0x2f636367
+ 314:	696c                	flw	fa1,84(a0)
+ 316:	6762                	flw	fa4,24(sp)
+ 318:	6c2f6363          	bltu	t5,sp,9de <crypto_aead_encrypt+0x952>
+ 31c:	6269                	lui	tp,0x1a
+ 31e:	32636367          	0x32636367
+ 322:	632e                	flw	ft6,200(sp)
+ 324:	7300                	flw	fs0,32(a4)
+ 326:	6968                	flw	fa0,84(a0)
+ 328:	7466                	flw	fs0,120(sp)
+ 32a:	635f 756f 746e      	0x746e756f635f
+ 330:	745f 7079 0065      	0x657079745f
+ 336:	4944                	lw	s1,20(a0)
+ 338:	7974                	flw	fa3,116(a0)
+ 33a:	6570                	flw	fa2,76(a0)
+ 33c:	7700                	flw	fs0,40(a4)
+ 33e:	685f 6769 5f68      	0x5f686769685f
+ 344:	6d74                	flw	fa3,92(a0)
+ 346:	0070                	addi	a2,sp,12
+ 348:	5f75                	li	t5,-3
+ 34a:	6f6c                	flw	fa1,92(a4)
+ 34c:	736d5f77          	0x736d5f77
+ 350:	0062                	c.slli	zero,0x18
+ 352:	69685f77          	0x69685f77
+ 356:	745f6867          	0x745f6867
+ 35a:	706d                	c.lui	zero,0xffffb
+ 35c:	7832                	flw	fa6,44(sp)
+ 35e:	2e00                	fld	fs0,24(a2)
  360:	2f2e                	fld	ft10,200(sp)
- 362:	6972                	flw	fs2,28(sp)
- 364:	2d766373          	csrrsi	t1,0x2d7,12
- 368:	2f636367          	0x2f636367
- 36c:	696c                	flw	fa1,84(a0)
- 36e:	6762                	flw	fa4,24(sp)
- 370:	632f6363          	bltu	t5,s2,996 <crypto_aead_encrypt+0x90a>
- 374:	69666e6f          	jal	t3,66a0a <_stack_start+0x50802>
+ 362:	2e2e                	fld	ft8,200(sp)
+ 364:	2f2e2e2f          	0x2f2e2e2f
+ 368:	2f2e                	fld	ft10,200(sp)
+ 36a:	6972                	flw	fs2,28(sp)
+ 36c:	2d766373          	csrrsi	t1,0x2d7,12
+ 370:	2f636367          	0x2f636367
+ 374:	696c                	flw	fa1,84(a0)
+ 376:	6762                	flw	fa4,24(sp)
                         const unsigned char* k) {
- 378:	69722f67          	0x69722f67
+ 378:	632f6363          	bltu	t5,s2,99e <crypto_aead_encrypt+0x912>
   to_bit_interleaving(K1, U64BIG(*(u64*)(k + 8)));
- 37c:	2f766373          	csrrsi	t1,0x2f7,12
- 380:	756d                	lui	a0,0xffffb
- 382:	746c                	flw	fa1,108(s0)
- 384:	3369                	jal	10e <crypto_aead_encrypt+0x82>
- 386:	632e                	flw	ft6,200(sp)
- 388:	6300                	flw	fs0,0(a4)
- 38a:	7261                	lui	tp,0xffff8
- 38c:	7972                	flw	fs2,60(sp)
- 38e:	7500                	flw	fs0,40(a0)
- 390:	6c5f 776f 7600      	0x7600776f6c5f
+ 37c:	69666e6f          	jal	t3,66a12 <_stack_start+0x5080a>
+ 380:	69722f67          	0x69722f67
+ 384:	2f766373          	csrrsi	t1,0x2f7,12
+ 388:	756d                	lui	a0,0xffffb
+ 38a:	746c                	flw	fa1,108(s0)
+ 38c:	3369                	jal	116 <crypto_aead_encrypt+0x8a>
+ 38e:	632e                	flw	ft6,200(sp)
+ 390:	6300                	flw	fs0,0(a4)
+ 392:	7261                	lui	tp,0xffff8
   to_bit_interleaving(N0, U64BIG(*(u64*)npub));
- 396:	6c5f 776f 7700      	0x7700776f6c5f
+ 394:	7972                	flw	fs2,60(sp)
+ 396:	7500                	flw	fs0,40(a0)
   to_bit_interleaving(K1, U64BIG(*(u64*)(k + 8)));
- 39c:	685f 6769 0068      	0x686769685f
+ 398:	6c5f 776f 7600      	0x7600776f6c5f
+ 39e:	6c5f 776f 7700      	0x7700776f6c5f
   to_bit_interleaving(N0, U64BIG(*(u64*)npub));
- 3a2:	656e                	flw	fa0,216(sp)
- 3a4:	5f775f77          	0x5f775f77
- 3a8:	6f6c                	flw	fa1,92(a4)
- 3aa:	          	0x77
+ 3a4:	685f 6769 0068      	0x686769685f
+ 3aa:	656e                	flw	fa0,216(sp)
+ 3ac:	5f775f77          	0x5f775f77
+ 3b0:	6f6c                	flw	fa1,92(a4)
+ 3b2:	          	0x77
 
 Disassembly of section .comment:
 

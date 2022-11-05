@@ -4,7 +4,7 @@
 #
 # Generate a baremetal application
 
-PROGRAM ?= mainInline
+PROGRAM ?= main
 PROGRAM_CFLAGS = -Wall -g -Os
 ARCH = rv32i
 # ARCH = rv32im # to disable compressed instructions
